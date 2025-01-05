@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 
 import BlogPost from './BlogPost';
 import blogs from "../data/blogs";
+import API from '../api/BaseApi';
 
 const StartHome = ({ id, title, description, image }) => {
   const [properties, setProperties] = useState([]);
@@ -20,19 +21,13 @@ const StartHome = ({ id, title, description, image }) => {
 
   useEffect(() => {
     // Fetch data from the backend
-    fetch("http://159.65.159.15:5000/api/properties",{
-       method: 'GET',
-  headers: {
-    'Cache-Control': 'no-cache'
-  }
-  
-    })
-      
+   API.get('/api/properties')     
       .then((response) => {
-        if (!response.ok) {
+       if (!response.status || response.status < 200 || response.status >= 300)  {
           throw new Error("Failed to fetch properties");
         }
-        return response.json();
+       console.log(response.data); // Axios automatically parses JSON
+      return response.data; // Return the data for further use
       })
       .then((data) => {
         console.log('API Response:', data);

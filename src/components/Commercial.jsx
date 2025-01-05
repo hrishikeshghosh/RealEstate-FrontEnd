@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import API from "../api/BaseApi";
 
 function Commercial() {
   const [commercialProperties, setCommercialProperties] = useState([]);
@@ -14,11 +15,11 @@ function Commercial() {
     const fetchCommercialProperties = async () => {
       setLoading(true);
       try {
-        const response = await fetch("http://localhost:3000/api/properties/commercial");
-        if (!response.ok) {
+        const response = await API.get("/api/properties/commercial");
+         if (!response.status || response.status < 200 || response.status >= 300)  {
           throw new Error("Failed to fetch commercial properties");
         }
-        const data = await response.json();
+        const data = response;
         setCommercialProperties(data);
       } catch (error) {
         console.error("Error fetching commercial properties:", error);

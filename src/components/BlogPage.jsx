@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import BlogPost from "./BlogPost";
+import API from "../api/BaseApi";
 
 const BlogPage = () => {
   const [blogs, setBlogs] = useState([]);
@@ -8,11 +9,11 @@ const BlogPage = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch("/api/blogs"); // Update with your API URL
-        if (!response.ok) {
+        const response = await API.get("/api/blogs"); // Update with your API URL
+        if (!response.status || response.status < 200 || response.status >= 300)  {
           throw new Error("Failed to fetch blogs");
         }
-        const data = await response.json();
+        const data = response.data;
         setBlogs(data); // Update blogs state with fetched data
       } catch (error) {
         console.error("Error fetching blogs:", error);

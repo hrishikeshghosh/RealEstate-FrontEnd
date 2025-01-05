@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
+import API from "../api/BaseApi";
 
 const SearchResults = () => {
   const [searchResults, setSearchResults] = useState([]);
@@ -14,15 +15,12 @@ const SearchResults = () => {
   useEffect(() => {
     const fetchSearchResults = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/search-properties", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ query, type  }), // Send both query and type
+        const response = await API.post("/api/search-properties", {
+         query:query,
+         type:type
         });
 
-        if (!response.ok) {
+        if (!response.status || response.status <200 || response.status >=300) {
           throw new Error("Failed to fetch search results");
         }
 

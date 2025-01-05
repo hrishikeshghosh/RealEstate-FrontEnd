@@ -1,6 +1,6 @@
-
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import API from '../api/BaseApi'; // Import the axios instance
 
 const BlogDetails = () => {
   const { id } = useParams(); // Get blog ID from URL
@@ -10,12 +10,9 @@ const BlogDetails = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/api/blogs/${id}`); // Backend endpoint for a specific blog
-        if (!response.ok) {
-          throw new Error("Failed to fetch blog");
-        }
-        const data = await response.json();
-        setBlog(data);
+        const response = await API.get(`/api/blogs/${id}`); // Use axios instance to fetch blog
+        console.log("response", response)
+        setBlog(response.data);
       } catch (error) {
         console.error("Error fetching blog:", error);
       } finally {
@@ -55,7 +52,7 @@ const BlogDetails = () => {
         blog.images.map((image, index) => (
           <img
             key={index}
-            src={`http://localhost:3000${image}`}
+            src={`${process.env.REACT_APP_API_BASE_URL}${image}`} // Use base URL from environment variable
             alt={blog.title}
             className="w-full mb-4 rounded-lg"
           />

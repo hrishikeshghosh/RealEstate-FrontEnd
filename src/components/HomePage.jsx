@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link,useNavigate} from "react-router-dom";
+import API from "../api/BaseApi";
 
 function HomePage() {
   const [residentialProperties, setResidentialProperties] = useState([]); // Residential properties state
@@ -15,11 +16,11 @@ function HomePage() {
     const fetchResidentialProperties = async () => {
       setLoading(true); // Start loading
       try {
-        const response = await fetch("http://localhost:3000/api/properties/residential"); // API endpoint
-        if (!response.ok) {
+        const response = await API.get("/api/properties/residential"); // API endpoint
+         if (!response.status || response.status < 200 || response.status >= 300) {
           throw new Error("Failed to fetch residential properties");
         }
-        const data = await response.json();
+        const data = response;
         setResidentialProperties(data); // Update residentialProperties state
       } catch (error) {
         console.error("Error fetching residential properties:", error);

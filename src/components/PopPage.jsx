@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import API from "../api/BaseApi";
 
 const PopPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -47,15 +48,13 @@ const PopPage = () => {
 
     if (Object.keys(validationErrors).length === 0) {
       try {
-        const response = await fetch("http://209.38.123.194:5000/api/contact-user", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
+        const response = await API.post("/api/contact-user", {
+          name:formData?.name,
+          email:formData?.email,
+          contactNumber:formData?.contactNumber,
         });
 
-        if (response.ok) {
+        if (response.status && response.status>=200 && response.status <300) {
           setSuccessMessage("User data submitted successfully!");
           setErrors({});
           setFormData({ name: "", email: "", contactNumber: "" });

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import API from "../api/BaseApi";
 
 const PropertyForm = () => {
   const [formData, setFormData] = useState({
@@ -56,15 +57,16 @@ const PropertyForm = () => {
     }
 
     try {
-      const response = await fetch("http://209.38.123.194:3000/api/contact-user", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+      const response = await API.post("/api/contact-user", {
+        name:formData?.name,
+        email:formData?.email,
+        contactNumber:formData?.contactNumber,
+        propertyArea:formData?.propertyArea,
+        propertyType:formData?.propertyType,
+        message:formData?.message
       });
 
-      if (response.ok) {
+      if (response.status && response.status>=200 && response.status<300) {
         setSuccess("User data submitted successfully!");
         setError("");
         setFormData({

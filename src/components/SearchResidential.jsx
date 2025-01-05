@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import SearchResults from "./SearchResults";
+import API from "../api/BaseApi";
 
 const SearchResidential = () => {
   const [searchResults, setSearchResults] = useState([]);
@@ -15,16 +16,16 @@ const SearchResidential = () => {
   useEffect(() => {
     const fetchSearchResults = async () => {
       try {
-        const response = await fetch(
-            `http://localhost:5000/api/properties/residential/search?${searchParams.toString()}`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ query, type ,bedrooms }), // Send both query and type
-        });
+        const response = await API.post(
+          `/api/properties/residential/search?${searchParams.toString()}`,
+          {
+            query: query,
+            type: type,
+            bedrooms: bedrooms,
+          }
+        );
 
-        if (!response.ok) {
+        if (!response.status || response.status <200 || response.status >=300) {
           throw new Error("Failed to fetch search results");
         }
 
@@ -36,18 +37,23 @@ const SearchResidential = () => {
     };
 
     fetchSearchResults();
-  }, [query, type,bedrooms]);
+  }, [query, type, bedrooms]);
 
   return (
     <div className="p-10">
       <div>
-        <h1 className="text-2xl font-bold mt-[10vh]">Here are the properties you are Looking for</h1>
+        <h1 className="text-2xl font-bold mt-[10vh]">
+          Here are the properties you are Looking for
+        </h1>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-[10vh]">
         {searchResults.length > 0 ? (
           searchResults.map((property) => (
-            <div key={property._id} className="bg-white shadow-md rounded-lg overflow-hidden relative group">
+            <div
+              key={property._id}
+              className="bg-white shadow-md rounded-lg overflow-hidden relative group"
+            >
               {property.featured && (
                 <span className="absolute top-2 left-2 bg-orange-500 text-white text-xs font-bold py-1 px-3 rounded-full z-10">
                   Featured
@@ -55,7 +61,11 @@ const SearchResidential = () => {
               )}
               <div className="relative">
                 <img
-                  src={property.Images && property.Images[0] ? property.Images[0] : "/public/default-image.jpg"}
+                  src={
+                    property.Images && property.Images[0]
+                      ? property.Images[0]
+                      : "/public/default-image.jpg"
+                  }
                   alt={property.title}
                   className="w-full h-48 object-cover"
                 />
@@ -96,14 +106,20 @@ const SearchResidential = () => {
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-sm font-bold text-gray-500">For Sale</span>
-                  <span className="text-lg font-bold text-teal-500">{property.price}</span>
+                  <span className="text-sm font-bold text-gray-500">
+                    For Sale
+                  </span>
+                  <span className="text-lg font-bold text-teal-500">
+                    {property.price}
+                  </span>
                 </div>
               </div>
             </div>
           ))
         ) : (
-          <p className="col-span-full text-center text-gray-500 text-lg">No properties found.</p>
+          <p className="col-span-full text-center text-gray-500 text-lg">
+            No properties found.
+          </p>
         )}
       </div>
     </div>

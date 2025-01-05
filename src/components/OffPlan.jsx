@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link,useNavigate } from "react-router-dom";
+import API from "../api/BaseApi";
 
 function HomePage() {
   const [offplanProperties, setOffplanProperties] = useState([]); // Offplan properties state
@@ -17,11 +18,11 @@ function HomePage() {
     const fetchOffplanProperties = async () => {
       setLoading(true); // Start loading
       try {
-        const response = await fetch("http://localhost:3000/api/properties/off-plan"); // API endpoint
-        if (!response.ok) {
+        const response = await API.get("/api/properties/off-plan"); // API endpoint
+         if (!response.status || response.status < 200 || response.status >= 300){
           throw new Error("Failed to fetch offplan properties");
         }
-        const data = await response.json();
+        const data = response;
         setOffplanProperties(data); // Update offplanProperties state
       } catch (error) {
         console.error("Error fetching offplan properties:", error);
