@@ -48,10 +48,10 @@ function HomePage() {
   };
 
   // Calculate dynamic counts of each property type
-  const propertyCounts = residentialProperties.reduce((acc, property) => {
+  const propertyCounts =residentialProperties?.length>0 ? residentialProperties.reduce((acc, property) => {
     acc[property.subCategory] = (acc[property.subCategory] || 0) + 1;
     return acc;
-  }, {});
+  }, {}):0;
 
   // Convert counts to filter format
   const propertyFilters = Object.entries(propertyCounts).map(([subCategory, count]) => [
@@ -199,7 +199,8 @@ function HomePage() {
           <p>No properties found.</p>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredProperties.map((property) => (
+            {filteredProperties?.length>0 ? 
+            filteredProperties.map((property) => (
               <div
                 key={property._id} // Use _id from the database
                 className="bg-white shadow-md rounded-lg overflow-hidden relative group"
@@ -259,7 +260,7 @@ function HomePage() {
                   </div>
                 </div>
               </div>
-            ))}
+            )):<></>}
           </div>
         )}
       </section>
