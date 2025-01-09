@@ -14,8 +14,8 @@ const FeedBack = () => {
             marginHeight="0"
             marginWidth="0"
             scrolling="no"
-            src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed"
-            style={{ filter: 'grayscale(1) contrast(1.2) opacity(0.4)' }}
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d451.30901848506284!2d55.2802911!3d25.1872953!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6b8293baa2a9%3A0x852495bf26b93ac9!2sLe%20Rose%20Real%20Estate!5e0!3m2!1sen!2sin!4v1736435037924!5m2!1sen!2sin"
+            // style={{ filter: 'grayscale(1) contrast(1.2) opacity(0.4)' }}
           ></iframe>
           <div className="bg-white relative flex flex-wrap py-6 rounded shadow-md">
             <div className="lg:w-1/2 px-6">
