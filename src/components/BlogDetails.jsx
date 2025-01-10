@@ -52,7 +52,7 @@ const BlogDetails = () => {
         blog.images.map((image, index) => (
           <img
             key={index}
-            src={`${process.env.REACT_APP_API_BASE_URL}${image}`} // Use base URL from environment variable
+            src={`${image}`} // Use base URL from environment variable
             alt={blog.title}
             className="w-full mb-4 rounded-lg"
           />
