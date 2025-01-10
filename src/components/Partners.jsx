@@ -16,23 +16,37 @@ const Partners = () => {
       <div className="overflow-hidden flex items-center justify-center relative w-full h-[10vh] ">
         {/* <!-- Scrolling Wrapper --> */}
         <div className="flex animate-scroll gap-8">
-          <img src="https://cdn.excelproperties.ae/media/developer/logo/emaar.webp?width=137&height=82&format=webp&quality=90" alt="Partner Logo" className="h-10" />
-          <img src="https://cdn.excelproperties.ae/media/developer/logo/arada.webp?width=137&height=82&format=webp&quality=90" alt="Partner Logo" className="h-10" />
-          <img src="https://cdn.excelproperties.ae/media/developer/logo/damac.webp?width=137&height=82&format=webp&quality=90" alt="Partner Logo" className="h-10" />
-          <img src="https://cdn.excelproperties.ae/media/developer/logo/arada.webp?width=137&height=82&format=webp&quality=90" alt="Partner Logo" className="h-10" />
-          <img src="https://cdn.excelproperties.ae/media/developer/logo/meraas.webp?width=137&height=82&format=webp&quality=90" alt="Partner Logo" className="h-10" />
-          {/* <!-- Duplicate logos for seamless scrolling --> */}
-          <img src="https://cdn.excelproperties.ae/media/developer/logo/emaar.webp?width=137&height=82&format=webp&quality=90" alt="Partner Logo" className="h-10" />
-          <img src="https://cdn.excelproperties.ae/media/developer/logo/arada.webp?width=137&height=82&format=webp&quality=90" alt="Partner Logo" className="h-10" />
-          <img src="https://cdn.excelproperties.ae/media/developer/logo/damac.webp?width=137&height=82&format=webp&quality=90" alt="Partner Logo" className="h-10" />
-          <img src="https://cdn.excelproperties.ae/media/developer/logo/arada.webp?width=137&height=82&format=webp&quality=90" alt="Partner Logo" className="h-10" />
-          <img src="https://cdn.excelproperties.ae/media/developer/logo/meraas.webp?width=137&height=82&format=webp&quality=90" alt="Partner Logo" className="h-10" />
-          <img src="https://cdn.excelproperties.ae/media/developer/logo/emaar.webp?width=137&height=82&format=webp&quality=90" alt="Partner Logo" className="h-10" />
-          <img src="https://cdn.excelproperties.ae/media/developer/logo/arada.webp?width=137&height=82&format=webp&quality=90" alt="Partner Logo" className="h-10" />
-          <img src="https://cdn.excelproperties.ae/media/developer/logo/damac.webp?width=137&height=82&format=webp&quality=90" alt="Partner Logo" className="h-10" />
-          <img src="https://cdn.excelproperties.ae/media/developer/logo/arada.webp?width=137&height=82&format=webp&quality=90" alt="Partner Logo" className="h-10" />
-          <img src="https://cdn.excelproperties.ae/media/developer/logo/meraas.webp?width=137&height=82&format=webp&quality=90" alt="Partner Logo" className="h-10" />
-        </div>
+          <img src="/DEVELOPERS LOGO BLUE-01.png" alt="Partner Logo" className="h-10" />
+          <img src="/DEVELOPERS LOGO BLUE-02.png" alt="Partner Logo" className="h-10" />
+          <img src="/DEVELOPERS LOGO BLUE-03.png" alt="Partner Logo" className="h-10" />
+          <img src="/DEVELOPERS LOGO BLUE-04.png" alt="Partner Logo" className="h-10" />
+          <img src="/DEVELOPERS LOGO BLUE-05.png" alt="Partner Logo" className="h-10" />
+          <img src="/DEVELOPERS LOGO BLUE-06.png" alt="Partner Logo" className="h-10" />
+          <img src="/DEVELOPERS LOGO BLUE-07.png" alt="Partner Logo" className="h-10" />
+          <img src="/DEVELOPERS LOGO BLUE-08.png" alt="Partner Logo" className="h-10" />
+          <img src="/DEVELOPERS LOGO BLUE-09.png" alt="Partner Logo" className="h-10" />
+         
+          <img src="/DEVELOPERS LOGO BLUE-01.png" alt="Partner Logo" className="h-10" />
+          <img src="/DEVELOPERS LOGO BLUE-02.png" alt="Partner Logo" className="h-10" />
+          <img src="/DEVELOPERS LOGO BLUE-03.png" alt="Partner Logo" className="h-10" />
+          <img src="/DEVELOPERS LOGO BLUE-04.png" alt="Partner Logo" className="h-10" />
+          <img src="/DEVELOPERS LOGO BLUE-05.png" alt="Partner Logo" className="h-10" />
+          <img src="/DEVELOPERS LOGO BLUE-06.png" alt="Partner Logo" className="h-10" />
+          <img src="/DEVELOPERS LOGO BLUE-07.png" alt="Partner Logo" className="h-10" />
+          <img src="/DEVELOPERS LOGO BLUE-08.png" alt="Partner Logo" className="h-10" />
+          <img src="/DEVELOPERS LOGO BLUE-09.png" alt="Partner Logo" className="h-10" />
+         
+          <img src="/DEVELOPERS LOGO BLUE-01.png" alt="Partner Logo" className="h-10" />
+          <img src="/DEVELOPERS LOGO BLUE-02.png" alt="Partner Logo" className="h-10" />
+          <img src="/DEVELOPERS LOGO BLUE-03.png" alt="Partner Logo" className="h-10" />
+          <img src="/DEVELOPERS LOGO BLUE-04.png" alt="Partner Logo" className="h-10" />
+          <img src="/DEVELOPERS LOGO BLUE-05.png" alt="Partner Logo" className="h-10" />
+          <img src="/DEVELOPERS LOGO BLUE-06.png" alt="Partner Logo" className="h-10" />
+          <img src="/DEVELOPERS LOGO BLUE-07.png" alt="Partner Logo" className="h-10" />
+          <img src="/DEVELOPERS LOGO BLUE-08.png" alt="Partner Logo" className="h-10" />
+          <img src="/DEVELOPERS LOGO BLUE-09.png" alt="Partner Logo" className="h-10" />
+         
+          </div>
       </div>
     </div>
   </div>
