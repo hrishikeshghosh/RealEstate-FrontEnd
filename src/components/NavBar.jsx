@@ -35,7 +35,7 @@ const NavBar = () => {
           {/* Logo Section */}
           <div className="w-[65px] h-[65px] rounded-full">
             <Link to="/">
-              <img className="object-cover object-center w-full h-full" src="/MAIN_LOGO.jpg" alt="Logo" />
+              <img className="object-cover object-center w-full h-full" src="/logo-01.png" alt="Logo" />
             </Link>
           </div>
 
@@ -82,10 +82,10 @@ const NavBar = () => {
             <div className="hidden lg:flex items-center">
 
               <button
-class="px-5 py-2 relative rounded-md group overflow-hidden font-medium bg-transparent border-2 text-black">
+className="px-5 py-2 relative rounded-md group overflow-hidden font-medium bg-transparent border-2 text-black">
 <span
-class="absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0 bg-zinc-900 group-hover:h-full opacity-90"></span>
-<Link to='/pro'><span class="relative group-hover:text-white text-sm font-semibold">List your property</span></Link>
+className="absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0 bg-zinc-900 group-hover:h-full opacity-90"></span>
+<Link to='/pro'><span className="relative group-hover:text-white text-sm font-semibold">List your property</span></Link>
 </button>
             </div>
 

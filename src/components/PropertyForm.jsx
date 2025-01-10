@@ -91,18 +91,18 @@ const PropertyForm = () => {
   return (
     <div>
       <div
-        className="relative flex flex-col lg:flex-row items-center justify-between bg-cover bg-center min-h-screen text-white"
+        className="relative flex flex-col lg:flex-row items-center justify-between bg-cover bg-center min-h-screen text-white lg:mt-[10vh] mt-[5vh]"
         style={{
           backgroundImage:
             "url(https://images.unsplash.com/photo-1733510548942-a69d4de5e03a?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)",
         }}
       >
         {/* Left Section */}
-        <div className="w-full lg:w-1/2 px-5 lg:pl-16 mb-8 lg:mb-0 text-center lg:text-left relative lg:-top-[15vw] top-[10vh]">
-          <h1 className="text-2xl lg:text-4xl font-bold mb-4">
-            LOOKING TO SELL OR RENT YOUR PROPERTY?
+        <div className="w-full lg:w-1/2 px-5 lg:pl-16 mb-8 lg:mb-0 text-center lg:text-left relative lg:-top-[15vw] top-[5vh]">
+          <h1 className="text-2xl lg:text-6xl font-normal mb-4 font-[real2]">
+            LOOKING TO SELL YOUR PROPERTY?
           </h1>
-          <p className="text-lg lg:text-xl">LIST WITH US TODAY!</p>
+          <p className="text-lg lg:text-xl font-[real2]">LIST WITH US TODAY !</p>
         </div>
 
         {/* Right Section - Form */}
@@ -148,7 +148,13 @@ const PropertyForm = () => {
                 Phone number*
               </label>
               <div className="relative mt-1">
-                <select className="absolute inset-y-0 left-0 pl-3 border-gray-300 bg-gray-50 text-gray-700 rounded-l-md">
+                <select className="absolute inset-y-0 left-0 border-gray-300 bg-gray-50 text-gray-700 rounded-l-md">
+      <option value="+971">🇦🇪 +971</option>
+                <option value="+1">🇺🇸 +1</option>
+      <option value="+44">🇬🇧 +44</option>
+      <option value="+61">🇦🇺 +61</option>
+      <option value="+81">🇯🇵 +81</option>
+      <option value="+86">🇨🇳 +86</option>
                   <option>🇮🇳 +91</option>
                 </select>
                 <input
@@ -179,9 +185,11 @@ const PropertyForm = () => {
                 className="w-full border-2 p-3 mt-1 text-zinc-700 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
               >
                 <option value="">Select Property Type</option>
-                <option value="Residential">Residential</option>
-                <option value="OffPlan">OffPlan</option>
-                <option value="Commercial">Commercial</option>
+                <option value="Residential">Apartment</option>
+                <option value="OffPlan">Townhouse</option>
+                <option value="Commercial">Villa</option>
+                <option value="Commercial">Plot</option>
+                <option value="Commercial">Full Floor</option>
               </select>
             </div>
 
@@ -191,7 +199,7 @@ const PropertyForm = () => {
                 Area
               </label>
               <input
-                type="Number"
+                type="text"
                 id="area"
                 placeholder="Area"
                 className="w-full border-2 p-3 mt-1 text-zinc-800 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"

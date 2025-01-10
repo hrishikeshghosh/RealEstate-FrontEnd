@@ -4,56 +4,21 @@ const MeetTheTeam = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "John Doe",
-      role: "Software Engineer",
-      image: "https://plus.unsplash.com/premium_photo-1732569105933-cd9903231867?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxNDR8fHxlbnwwfHx8fHw%3D",
+      name: "Zahraa Mohammed Hussein",
+      role: "CEO / Agent Representative",
+      image: "https://media.istockphoto.com/id/1952108243/photo/photo-of-young-women-in-winter-wear-standing-on-yellow-background-stock-photo.jpg?s=2048x2048&w=is&k=20&c=yMkepGphpcs_VfG3rB8tR6pBr6j2bF4SJJAWLzvcj3Y=",
     },
     {
       id: 2,
-      name: "Jane Smith",
-      role: "Graphic Designer",
-      image: "https://spacema-dev.com/elevate/assets/images/team/4.jpg",
+      name: "Ibrahim Al-Sadoon	Position",
+      role: "Business Development Manager",
+      image: "https://images.unsplash.com/photo-1453396450673-3fe83d2db2c4?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
-    {
-      id: 3,
-      name: "Alex Johnson",
-      role: "Marketing Manager",
-      image: "https://spacema-dev.com/elevate/assets/images/team/3.jpg",
-    },
-    {
-      id: 4,
-      name: "Peter Johnson",
-      role: "SEO Specialist",
-      image: "https://spacema-dev.com/elevate/assets/images/team/2.jpg",
-    },
-    {
-      id: 5,
-      name: "Emily Brown",
-      role: "UX Designer",
-      image: "https://spacema-dev.com/elevate/assets/images/team/5.jpg",
-    },
-    {
-      id: 6,
-      name: "Michael Davis",
-      role: "Frontend Developer",
-      image: "https://spacema-dev.com/elevate/assets/images/team/6.jpg",
-    },
-    {
-      id: 7,
-      name: "Sarah Johnson",
-      role: "Content Writer",
-      image: "https://spacema-dev.com/elevate/assets/images/team/7.jpg",
-    },
-    {
-      id: 8,
-      name: "David Wilson",
-      role: "Project Manager",
-      image: "https://spacema-dev.com/elevate/assets/images/team/8.jpg",
-    },
+   
   ];
 
   return (
-    <section id="our-team" className="bg-gray-400 py-16">
+    <section id="our-team" className="bg-gray-100 py-16">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-8 text-primary mt-10">
           Meet Our Team
