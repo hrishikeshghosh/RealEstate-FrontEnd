@@ -16,6 +16,11 @@
     src: url(./assets/rP2Hp2ywxg089UriCZ2IHTWEBlwu8Q.woff2);
   
   }
+@font-face {
+    font-family: real2;
+    src: url(./assets/LilitaOne-Regular.ttf);
+  
+  }
 
   body{
     /* background-color: #023145; */
