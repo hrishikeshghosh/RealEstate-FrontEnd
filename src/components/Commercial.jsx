@@ -20,7 +20,7 @@ function Commercial() {
           throw new Error("Failed to fetch commercial properties");
         }
         const data = response;
-        setCommercialProperties(data);
+        setCommercialProperties(data?.data);
       } catch (error) {
         console.error("Error fetching commercial properties:", error);
       } finally {
@@ -185,7 +185,7 @@ function Commercial() {
                 )}
                 <div className="relative">
                   <img
-                    src={property.image || "default-image-url.jpg"}
+                    src={property.Images[0] || "default-image-url.jpg"}
                     alt={property.title}
                     className="w-full h-48 object-cover"
                   />

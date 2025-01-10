@@ -23,7 +23,7 @@ function HomePage() {
           throw new Error("Failed to fetch offplan properties");
         }
         const data = response;
-        setOffplanProperties(data); // Update offplanProperties state
+        setOffplanProperties(data?.data); // Update offplanProperties state
       } catch (error) {
         console.error("Error fetching offplan properties:", error);
       } finally {
@@ -220,7 +220,7 @@ function HomePage() {
                 )}
                 <div className="relative">
                   <img
-                    src={property.image || "default-image-url.jpg"} // Use default image if not provided
+                    src={property.Images[0] || "default-image-url.jpg"} // Use default image if not provided
                     alt={property.title}
                     className="w-full h-48 object-cover"
                   />

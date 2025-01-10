@@ -20,8 +20,8 @@ function HomePage() {
          if (!response.status || response.status < 200 || response.status >= 300) {
           throw new Error("Failed to fetch residential properties");
         }
-        const data = response;
-        setResidentialProperties(data); // Update residentialProperties state
+        const data = response; 
+        setResidentialProperties(data?.data); // Update residentialProperties state
       } catch (error) {
         console.error("Error fetching residential properties:", error);
       } finally {
@@ -67,6 +67,9 @@ function HomePage() {
     selectedType === "All"
       ? residentialProperties
       : residentialProperties.filter((property) => property.subCategory === selectedType);
+
+
+      console.log("filteredProperties", filteredProperties)
 
   return (
     <div>
@@ -212,7 +215,7 @@ function HomePage() {
                 )}
                 <div className="relative">
                   <img
-                    src={property.image || "default-image-url.jpg"} // Use default image if not provided
+                    src={property.Images[0] || "default-image-url.jpg"} // Use default image if not provided
                     alt={property.title}
                     className="w-full h-48 object-cover"
                   />
