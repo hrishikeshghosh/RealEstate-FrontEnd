@@ -9,7 +9,7 @@ const BlogPost = ({ id, title, image }) => {
         <img
           src={image} // Display blog image
           alt={title}
-          className="w-full h-56 object-cover"
+          className="w-full h-56 object-cover object-top"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-75"></div>
       </div>

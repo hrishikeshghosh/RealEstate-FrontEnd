@@ -54,7 +54,7 @@ const BlogDetails = () => {
             key={index}
             src={`${image}`} // Use base URL from environment variable
             alt={blog.title}
-            className="w-full mb-4 rounded-lg"
+            className="w-full mb-4 rounded-lg object-center"
           />
         ))}
       <div dangerouslySetInnerHTML={{ __html: blog.content }}></div> {/* Render HTML content */}
