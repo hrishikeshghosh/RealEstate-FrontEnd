@@ -636,7 +636,7 @@ const StartHome = ({ id, title, description, image }) => {
             )}
             <div className="relative">
               <img
-                src={property.image}
+                src={property.Images[0]}
                 alt={property.title}
                 className="w-full h-48 object-cover"
               />
