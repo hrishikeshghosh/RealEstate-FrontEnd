@@ -513,7 +513,7 @@ const StartHome = ({ id, title, description, image }) => {
   <div>
   <div className="w-full relative">
 <p className="text-lg text-gray-800 font-semibold font-manrope">
-<span className="bg-gradient-to-r from-indigo-600  to-purple-600  bg-no-repeat bg-bottom p-1 text-white">Properties</span> For Sale in Dubai
+<span className="bg-gradient-to-r from-indigo-600  to-purple-600  bg-no-repeat bg-bottom p-1 text-white">Off-Plan</span> Properties in Dubai
 </p>
 </div>
       <span className="text-sm text-zinc-800 font-thin">
@@ -523,7 +523,7 @@ const StartHome = ({ id, title, description, image }) => {
   </div>
   <Link
     className="lg:border-2 text-zinc-800 lg:p-2 lg:text-lg rounded border border-gray-400 px-4 py-2 sm:px-3 sm:py-1 sm:text-sm hover:bg-gray-200 hover:text-zinc-800"
-    to="/home"
+    to="/off-plan"
   >
     More properties
   </Link>
@@ -605,7 +605,7 @@ const StartHome = ({ id, title, description, image }) => {
   <div>
   <div className="w-full relative">
 <p className="text-lg text-gray-800 font-semibold font-manrope">
-<span className="bg-gradient-to-r from-indigo-600  to-purple-600  bg-no-repeat bg-bottom p-1 text-white">Off-Plan</span> Properties in Dubai
+<span className="bg-gradient-to-r from-indigo-600  to-purple-600  bg-no-repeat bg-bottom p-1 text-white">Properties</span> For Sale in Dubai
 </p>
 </div>
       <span className="text-sm text-zinc-700 font-thin">
@@ -615,7 +615,7 @@ const StartHome = ({ id, title, description, image }) => {
   </div>
   <Link
     className="lg:border-2 text-zinc-700 lg:p-2 lg:text-lg rounded border border-gray-400 px-4 py-2 sm:px-3 sm:py-1 sm:text-sm hover:bg-gray-200 hover:text-zinc-800"
-    to="/home"
+    to="/Properties-For-Sale-in-Dubai"
   >
     More properties
   </Link>

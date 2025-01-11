@@ -51,6 +51,7 @@ const App = () => {
           <Route path="/pro" element={<PropertyForm />} />
           <Route path="/off-plan" element={<OffPlan />} />
           <Route path="/commercial" element={<Commercial />} />
+          <Route path="/Properties-For-Sale-in-Dubai" element={<Commercial />} />
           <Route path="/partners" element={<Partners />} />
           <Route path="/req" element={<RequestForm />} />
           <Route path="/admin" element={<Admin />} />
