@@ -4,13 +4,13 @@ const MeetTheTeam = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "Zahraa Mohammed Hussein",
+      name: "Zahraa Hussein",
       role: "CEO / Agent Representative",
       image: "https://media.istockphoto.com/id/1952108243/photo/photo-of-young-women-in-winter-wear-standing-on-yellow-background-stock-photo.jpg?s=2048x2048&w=is&k=20&c=yMkepGphpcs_VfG3rB8tR6pBr6j2bF4SJJAWLzvcj3Y=",
     },
     {
       id: 2,
-      name: "Ibrahim Al-Sadoon	Position",
+      name: "Ibrahim Al-Sadoon",
       role: "Business Development Manager",
       image: "https://images.unsplash.com/photo-1453396450673-3fe83d2db2c4?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },

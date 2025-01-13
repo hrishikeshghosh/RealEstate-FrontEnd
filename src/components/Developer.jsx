@@ -4,25 +4,67 @@ import React, { useState } from "react";
 const developers = [
   {
     name: "Emaar Properties",
-    logo: "https://cdn.excelproperties.ae/media/developer/logo/emaar.webp?width=137&height=82&format=webp&quality=90", // Replace with actual logo URL
-    projects: 270,
+    logo: "/DEVELOPERS LOGO BLUE-05.png", // Replace with actual logo URL
+    projects: 135,
     description: "Emaar Properties is one of the top developers in UAE known for iconic buildings like Burj Khalifa.",
-    image: "/src/assets/webimg1.webp", // Replace with actual developer's image URL
+    image: "/webimg1.webp", // Replace with actual developer's image URL
+  },
+  {
+    name: "Properties",
+    logo: "/DEVELOPERS LOGO BLUE-09.png",
+    projects: 123,
+    description: "Offers luxurious properties across Dubai and beyond.",
+    image: "/webimg1.webp",
+  },
+  {
+    name: "IMTIAZ DEVELOPMENTS",
+    logo: "/DEVELOPERS LOGO BLUE-01.png",
+    projects: 79,
+    description: "Imtiaz Developments offers luxurious properties across Dubai and beyond.",
+    image: "/webimg1.webp",
+  },
+  {
+    name: "Dubai Properties",
+    logo: "/DEVELOPERS LOGO BLUE-02.png",
+    projects: 202,
+    description: "Dubai Properties offers luxurious properties across Dubai and beyond.",
+    image: "/webimg1.webp",
+  },
+  {
+    name: "Meraas",
+    logo: "/DEVELOPERS LOGO BLUE-03.png",
+    projects: 72,
+    description: "Meraas is a Dubai-based holding company creating urban living experiences.",
+    image: "/webimg1.webp",
   },
   {
     name: "Damac Properties",
-    logo: "https://cdn.excelproperties.ae/media/developer/logo/damac.webp?width=137&height=82&format=webp&quality=90",
-    projects: 212,
+    logo: "/DEVELOPERS LOGO BLUE-04.png",
+    projects: 182,
     description: "Damac Properties offers luxurious properties across Dubai and beyond.",
-    image: "https://via.placeholder.com/600x400",
+    image: "/webimg1.webp",
+  },
+  {
+    name: "Object 1",
+    logo: "/DEVELOPERS LOGO BLUE-06.png",
+    projects: 125,
+    description: "Object Properties offers luxurious properties across Dubai and beyond.",
+    image: "/webimg1.webp",
+  },
+  {
+    name: "Omniyat",
+    logo: "/DEVELOPERS LOGO BLUE-08.png",
+    projects: 127,
+    description: "Omniyat offers luxurious properties across Dubai and beyond.",
+    image: "/webimg1.webp",
   },
 
   {
-    name: "Meraas",
-    logo: "https://cdn.excelproperties.ae/media/developer/logo/meraas.webp?width=137&height=82&format=webp&quality=90",
+    name: "Nakheel",
+    logo: "/DEVELOPERS LOGO BLUE-07.png",
     projects: 72,
-    description: "Meraas is a Dubai-based holding company creating urban living experiences.",
-    image: "https://via.placeholder.com/600x400",
+    description: "Nakheel is a Dubai-based holding company creating urban living experiences.",
+    image: "/webimg1.webp",
   },
  
   

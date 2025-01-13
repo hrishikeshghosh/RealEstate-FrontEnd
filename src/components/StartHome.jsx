@@ -710,26 +710,86 @@ const StartHome = ({ id, title, description, image }) => {
 
 
     {/* <!-- Property Listings Grid --> */}
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
       {/* <!-- Property Card --> */}
      
+     <Link to="/blogpage">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
      
-      {blogs.map((blog) => (
-        <BlogPost
-          key={blog.id}
-          id={blog.id}
-          title={blog.title}
-          description={blog.description}
-          image={blog.image}
-        />
-      ))}
+     
+    <div className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg overflow-hidden mb-8">
+         {/* Image Section */}
+         <div className="relative">
+           <img
+             src='https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZHViYWklMjBwcm9wZXJ0eXxlbnwwfDB8MHx8fDA%3D' // Display blog image
+             alt={title}
+             className="w-full h-56 object-cover object-top"
+           />
+           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-75"></div>
+         </div>
+   
+         {/* Content Section */}
+         <div className="p-6">
+           <h3 className="text-xl font-bold text-gray-800 mb-3">Get latest Real estate upate 2025</h3>
+           <Link
+             to={`/blogpage`} // Link to blog detail page
+             className="inline-block px-4 py-2 bg-blue-500 text-white rounded-full font-medium text-sm hover:bg-blue-600 transition-all duration-300"
+           >
+             Read More →
+           </Link>
+         </div>
+       </div>
+    <div className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg overflow-hidden mb-8">
+         {/* Image Section */}
+         <div className="relative">
+           <img
+             src="https://images.unsplash.com/flagged/photo-1559717865-a99cac1c95d8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZHViYWklMjBwcm9wZXJ0eXxlbnwwfDB8MHx8fDA%3D" // Display blog image
+             alt={title}
+             className="w-full h-56 object-cover object-top"
+           />
+           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-75"></div>
+         </div>
+   
+         {/* Content Section */}
+         <div className="p-6">
+           <h3 className="text-xl font-bold text-gray-800 mb-3">Read latest blog about dubai</h3>
+           <Link
+             to={`/blogpage`} // Link to blog detail page
+             className="inline-block px-4 py-2 bg-blue-500 text-white rounded-full font-medium text-sm hover:bg-blue-600 transition-all duration-300"
+           >
+             Read More →
+           </Link>
+         </div>
+       </div>
+    <div className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg overflow-hidden mb-8">
+         {/* Image Section */}
+         <div className="relative">
+           <img
+             src="https://images.unsplash.com/flagged/photo-1559717201-fbb671ff56b7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGR1YmFpJTIwcHJvcGVydHl8ZW58MHwwfDB8fHww" // Display blog image
+             alt={title}
+             className="w-full h-56 object-cover object-top"
+           />
+           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-75"></div>
+         </div>
+   
+         {/* Content Section */}
+         <div className="p-6">
+           <h3 className="text-xl font-bold text-gray-800 mb-3">How to Invest in Real Estate Wisely</h3>
+           <Link
+             to={`/blogpage`} // Link to blog detail page
+             className="inline-block px-4 py-2 bg-blue-500 text-white rounded-full font-medium text-sm hover:bg-blue-600 transition-all duration-300"
+           >
+             Read More →
+           </Link>
+         </div>
+       </div>
+    </div>
+      </Link>
  
 
       {/* <!-- Duplicate the structure for other properties --> */}
      
     
       
-    </div>
   </div>
   </div>
 </div>
