@@ -63,7 +63,7 @@ const App = () => {
           <Route path="/blogform" element={<BlogForm />} />
           <Route path="/feed" element={<FeedBack />} />
           {/* <Route element={<Map />} /> */}
-          <Route path="/blog/:id" element={<BlogDetails />} />
+          <Route path="/blog/:id/:title" element={<BlogDetails />} />
           <Route path="/allproperties" element={<PropertyListing />} />
           <Route path="/property/:id" element={<ViewProperty />} />
           <Route path="/search-result" element={<SearchResults />} />

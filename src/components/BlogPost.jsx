@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const BlogPost = ({ id, title, image }) => {
+  const formatTitle = (title) => title.toLowerCase().replace(/\s+/g, '-'); // Spaces to hyphens
   return (
     <div className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg overflow-hidden mb-8">
       {/* Image Section */}
@@ -18,7 +19,7 @@ const BlogPost = ({ id, title, image }) => {
       <div className="p-6">
         <h3 className="text-xl font-bold text-gray-800 mb-3">{title}</h3>
         <Link
-          to={`/blog/${id}`} // Link to blog detail page
+          to={`/blog/${id}/${formatTitle(title)}`} // Link to blog detail page
           className="inline-block px-4 py-2 bg-blue-500 text-white rounded-full font-medium text-sm hover:bg-blue-600 transition-all duration-300"
         >
           Read More →
