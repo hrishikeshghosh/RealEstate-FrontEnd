@@ -185,11 +185,11 @@ const PropertyForm = () => {
                 className="w-full border-2 p-3 mt-1 text-zinc-700 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
               >
                 <option value="">Select Property Type</option>
-                <option value="Residential">Apartment</option>
-                <option value="OffPlan">Townhouse</option>
-                <option value="Commercial">Villa</option>
-                <option value="Commercial">Plot</option>
-                <option value="Commercial">Full Floor</option>
+                <option value="Apartment">Apartment</option>
+                <option value="Townhouse">Townhouse</option>
+                <option value="Villa">Villa</option>
+                <option value="Plot">Plot</option>
+                <option value="Full Floor">Full Floor</option>
               </select>
             </div>
 
