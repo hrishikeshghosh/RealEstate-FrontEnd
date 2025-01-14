@@ -3,6 +3,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import RequestForm from "./RequestForm";
 import FeedBack from "./Map";
 import Map from "./Map";
+import API from "../api/BaseApi";
+
 
 const ViewProperty = () => {
   const location = useLocation();
@@ -12,9 +14,11 @@ const ViewProperty = () => {
   const property = location.state?.property;
 
   const slides = property?.images || [
-    "https://picsum.photos/800/450",
-    "https://picsum.photos/800/452",
-    "https://picsum.photos/800/453",
+    property.Images[0],
+    property.Images[1], 
+    property.Images[0],
+
+   
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -168,7 +172,7 @@ const ViewProperty = () => {
                 </div>
               </div>
         <div className="mt-6">
-          <span className="text-lg font-bold text-teal-500">{property.price}</span>
+          <span className="text-lg font-bold text-teal-500">{property.price} AED</span>
         </div>
         <h2 className="text-2xl font-extrabold mt-10">
           Description
