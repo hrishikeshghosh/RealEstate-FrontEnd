@@ -51,6 +51,11 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+   <div className="bg-gray-800 flex items-center justify-evenly text-white text-center py-4">
+    <a href="/privacy-policy">Privacy Policy</a>
+    <a href="/termandcondition">Terms & Conditions</a>
+    <a href="/contact-us">Contact Us</a>
+   </div>
     </div>
   )
 };

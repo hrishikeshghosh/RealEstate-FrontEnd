@@ -28,6 +28,9 @@ import SearchResults from './components/SearchResults';
 import SearchResidential from './components/SearchResidential';
 import SearchCommercial from './components/SearchCommercial';
 import SearchOffPlan from './components/SearchOffPlan';
+import Demo from './components/Demo';
+import TermsConditions from './components/Terms & Conditions';
+
 
 
 const App = () => {
@@ -70,7 +73,9 @@ const App = () => {
           <Route path="/search-residential" element={<SearchResidential />} />
           <Route path="/search-commercial" element={<SearchCommercial />} />
           <Route path="/search-off-plan" element={<SearchOffPlan />} />
-
+          <Route path="/privacy-policy" element={<Demo />} />
+          <Route path="/termandcondition" element={<TermsConditions />} />
+          
           {/* <Route path="/map" element={<PopPage />} /> */}
           <Route path="*" element={<div>
             <section class="flex items-center h-screen p-16 bg-gray-50 dark:bg-gray-700">

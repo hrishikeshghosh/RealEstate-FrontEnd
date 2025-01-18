@@ -154,7 +154,7 @@ const ContactPage = () => {
                 onChange={handleChange}
                 placeholder="Your Message"
                 rows="6"
-                className="w-full p-2 border-b-2 border-gray-300 bg-transparent outline-none focus:border-gray-500"
+                className="w-full p-2 border-b-2 border-gray-300 bg-transparent outline-none focus:border-gray-500 resize-none"
               ></textarea>
               {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
             </div>
