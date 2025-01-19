@@ -16,7 +16,10 @@ const ViewProperty = () => {
   const slides = property?.images || [
     property.Images[0],
     property.Images[1], 
-    property.Images[0],
+    property.Images[2],
+    property.Images[3],
+    property.Images[4],
+    
 
    
   ];
@@ -88,9 +91,9 @@ const ViewProperty = () => {
 
           {/* Thumbnails */}
           <ul
-            className="h-[10vh] items-center justify-center flex gap-4 overflow-x-auto scrollbar-hide flex-grow"
+            className="h-[10vh] gap-4 flex items-center overflow-x-hidden scrollbar-hide flex-grow"
             style={{
-              scrollSnapType: "x mandatory",
+              scrollSnapType: "x mandatory ",
             }}
           >
             {slides.map((slide, index) => (
