@@ -133,7 +133,7 @@ function Commercial() {
                   <option className="text-zinc-800" value={3000}>3000</option>
                 </select>
                 <button
-                  className="w-full lg:w-1/4 px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-600"
+                  className="w-full lg:w-1/4 px-4 py-2 bg-black text-white rounded hover:bg-zinc-800"
                   onClick={handleSearch}
                 >
                   Search
@@ -153,9 +153,9 @@ function Commercial() {
               key={subCategory}
               className={`px-4 py-2 rounded-lg border ${
                 selectedType === subCategory
-                  ? "bg-teal-500 text-white"
+                  ? "bg-zinc-900 text-white"
                   : "bg-white text-gray-700"
-              } hover:bg-teal-500 hover:text-white transition`}
+              } hover:bg-zinc-800 hover:text-white transition`}
               onClick={() => setSelectedType(subCategory)}
             >
               {subCategory === "All" ? "🏢 All Properties" : subCategory} ({count})

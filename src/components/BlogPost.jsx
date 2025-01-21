@@ -20,7 +20,7 @@ const BlogPost = ({ id, title, image }) => {
         <h3 className="text-xl font-bold text-gray-800 mb-3">{title}</h3>
         <Link
           to={`/blog/${id}/${formatTitle(title)}`} // Link to blog detail page
-          className="inline-block px-4 py-2 bg-blue-500 text-white rounded-full font-medium text-sm hover:bg-blue-600 transition-all duration-300"
+          className="inline-block px-4 py-2 bg-zinc-700 text-white rounded-full font-medium text-sm hover:bg-zinc-900 transition-all duration-300"
         >
           Read More →
         </Link>

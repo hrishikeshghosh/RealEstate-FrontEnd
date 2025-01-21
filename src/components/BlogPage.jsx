@@ -27,7 +27,7 @@ const BlogPage = () => {
 
   if (loading) {
     return (
-      <div className="max-w-4xl mx-auto p-6 mt-[15vh]">
+      <div className="max-w-4xl mx-auto p-5 mt-[15vh]">
         <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">
           Real Estate Blogs
         </h1>
@@ -37,12 +37,12 @@ const BlogPage = () => {
   }
 
   return (
-    <div className="max-w-4xl mx-auto p-6 mt-[15vh]">
+    <div className="mx-auto p-5 mt-[15vh]">
       <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">
         Real Estate Blogs
       </h1>
       {blogs.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-5 lg:grid-cols-3">
           {blogs.map((blog) => (
             <BlogPost
               key={blog._id} // Use `_id` from the database
