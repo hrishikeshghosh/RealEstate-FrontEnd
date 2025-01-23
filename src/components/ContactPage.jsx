@@ -99,7 +99,7 @@ const ContactPage = () => {
         <div className="lg:w-3/5 p-6 lg:p-12 bg-white text-gray-800">
           <h1 className="text-2xl lg:text-4xl font-light uppercase tracking-wide mb-4">Contact Us</h1>
           <p className="text-sm lg:text-base mb-6">
-            Planning to visit Indonesia soon? Get insider tips on where to go, things to do, and find the best deals for your next adventure.
+            Planning to visit Dubai soon? Get insider tips on where to go, things to do, and find the best deals.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-6">

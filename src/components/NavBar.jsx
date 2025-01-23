@@ -11,6 +11,7 @@ const NavBar = () => {
   };
 
   const handleSelectChange = (event) => {
+    setMenuOpen(false); // Close the mobile menu when a link is clicked
     const value = event.target.value;
     if (value === "Areas") {
       navigate("/area-guides-in-dubai");
@@ -104,16 +105,16 @@ className="absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-20
         {isMenuOpen && (
           <div className="absolute top-[75px] left-0 w-full bg-white shadow-lg z-10 lg:hidden">
             <ul className="flex flex-col gap-4 p-4 text-sm text-gray-700">
-              <Link to="/buy-property" className="hover:text-gray-900 transition">
+              <Link to="/buy-property"  onClick={handleSelectChange} className="hover:text-gray-900 transition">
                 Buy
               </Link>
-              <Link to="/off-plan" className="hover:text-gray-900 transition">
+              <Link to="/off-plan" onClick={handleSelectChange} className="hover:text-gray-900 transition">
                 Off Plan
               </Link>
-              <Link to="/commercial" className="hover:text-gray-900 transition">
+              <Link to="/commercial" onClick={handleSelectChange} className="hover:text-gray-900 transition">
                 Commercial
               </Link>
-              <Link to="/blogpage" className="hover:text-gray-900 transition">
+              <Link to="/blogpage" onClick={handleSelectChange} className="hover:text-gray-900 transition">
                 Blog
               </Link>
 
@@ -132,7 +133,9 @@ className="absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-20
               </li>
 
               <li>
-                <select className="w-full border border-gray-300 rounded-md p-2">
+                <select
+                onClick={handleSelectChange}
+                className="w-full border border-gray-300 rounded-md p-2">
                   <option>EN</option>
                   <option>AR</option>
                   <option>RU</option>
@@ -140,6 +143,7 @@ className="absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-20
               </li>
 
               <Link
+              onClick={handleSelectChange}
                 className="bg-black text-white border p-2 rounded-md hover:bg-gray-800 transition"
                 to="/pro"
               >
