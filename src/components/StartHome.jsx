@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
-
+import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import BlogPage from './BlogPage';
 
@@ -16,7 +16,7 @@ const StartHome = ({ id, title, description, image }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [propertyType, setPropertyType] = useState("");
   const navigate = useNavigate();
-
+const location = useLocation();
 
   useEffect(() => {
     // Fetch data from the backend
@@ -95,7 +95,10 @@ const StartHome = ({ id, title, description, image }) => {
       setCurrentPage((prev) => prev - 1);
     }
   };
-
+  useEffect(() => {
+    // Scroll to top on route change
+    window.scrollTo(0, 0);
+  }, [location.pathname]); // Runs whenever the route changes
   useEffect(() => {
     const handleTyping = () => {
       const currentWord = words[index];

@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 import { Link } from "react-router-dom";
 
 const BlogPost = ({ id, title, image }) => {
   const formatTitle = (title) => title.toLowerCase().replace(/\s+/g, '-'); // Spaces to hyphens
+ 
+  const location = useLocation();
+
+  useEffect(() => {
+    // Page ke top par scroll karne ke liye
+    window.scrollTo(0, 0);
+  }, [location.pathname]); // Jab bhi route change hoga ye effect chalega
+
   return (
     <div className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg overflow-hidden mb-8">
       {/* Image Section */}

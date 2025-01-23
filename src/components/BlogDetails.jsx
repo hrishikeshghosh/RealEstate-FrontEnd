@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import API from '../api/BaseApi'; // Import the axios instance
 
 const BlogDetails = () => {
   const { id } = useParams(); // Get blog ID from URL
   const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
+  const location = useLocation();
+
+  useEffect(() => {
+    // Page ke top par scroll karne ke liye
+    window.scrollTo(0, 0);
+  }, [location.pathname]); // Jab bhi route change hoga ye effect chalega
+
 
   useEffect(() => {
     const fetchBlog = async () => {

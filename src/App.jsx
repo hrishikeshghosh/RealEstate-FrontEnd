@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import {  Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import HomePage from './components/HomePage';
 import PropertyForm from './components/PropertyForm';
@@ -30,6 +30,7 @@ import SearchCommercial from './components/SearchCommercial';
 import SearchOffPlan from './components/SearchOffPlan';
 import Demo from './components/Demo';
 import TermsConditions from './components/Terms & Conditions';
+import ScrollToTop from './components/ScrollToTop';
 
 
 
@@ -42,6 +43,9 @@ const App = () => {
                 <meta name="keywords" content="Real Estate, Dubai, Properties, Rent, Buy" />
             </Helmet>
       {/* Navbar at the top */}
+     
+
+      <ScrollToTop />
       <NavBar /> 
        <PopPage/>
 
@@ -97,6 +101,7 @@ const App = () => {
       {/* Footer at the bottom */}
       <Partners />
       <Footer />
+      
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link,useNavigate} from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import API from "../api/BaseApi";
 
 function HomePage() {
@@ -10,7 +11,7 @@ function HomePage() {
   const [propertyType, setPropertyType] = useState(""); // Dropdown for property type
   const [bedroomType, setBedroomType] = useState(""); // Dropdown for bedroom type
   const navigate = useNavigate();
-
+  const location = useLocation();
   // Fetch Residential Properties
   useEffect(() => {
     const fetchResidentialProperties = async () => {
@@ -69,7 +70,12 @@ function HomePage() {
       : residentialProperties.filter((property) => property.subCategory === selectedType);
 
 
-      console.log("filteredProperties", filteredProperties)
+      // console.log("filteredProperties", filteredProperties)
+      useEffect(() => {
+        // Page ke top par scroll karne ke liye
+        window.scrollTo(0, 0);
+      }, [location.pathname]); // Jab bhi route change hoga ye effect chalega
+    
 
   return (
     <div>

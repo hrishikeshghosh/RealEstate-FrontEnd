@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const FeedBack = () => {
   const [formData, setFormData] = useState({
@@ -7,7 +8,7 @@ const FeedBack = () => {
     number: "",
     message: "",
   });
-
+const location = useLocation();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -36,7 +37,12 @@ const FeedBack = () => {
       alert("Something went wrong. Please try again.");
     }
   };
+  
 
+  useEffect(() => {
+    // Page ke top par scroll karne ke liye
+    window.scrollTo(0, 0);
+  }, [location.pathname]); // Jab bhi route change hoga ye effect chalega
   return (
     <section className="text-gray-600 body-font relative">
       <div className="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">

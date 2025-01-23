@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const AboutUs = () => {
+  const location = useLocation();
   const [showMore, setShowMore] = useState(false);
 
   const handleReadMore = () => {
     setShowMore(!showMore);
   };
-
+  useEffect(() => {
+    // Page ke top par scroll karne ke liye
+    window.scrollTo(0, 0);
+  }, [location.pathname]); // Jab bhi route change hoga ye effect chalega
   return (
     <div className="container mx-auto grid grid-cols-1 mt-[10vh] lg:grid-cols-2 gap-16 py-8 lg:mt-[5vw] p-10">
       {/* Left Content */}

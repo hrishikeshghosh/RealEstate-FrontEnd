@@ -1,5 +1,7 @@
-
 import React, { useState } from "react";
+
+
+
 
 const developers = [
   {
@@ -88,7 +90,7 @@ export default function Developers() {
           >
             <img src={dev.logo} alt={dev.name} className="h-20 mx-auto mb-4" />
             <h2 className="text-lg font-semibold text-center">{dev.name}</h2>
-            <p className="text-gray-500 text-center">{dev.projects} Projects</p>
+            {/* <p className="text-gray-500 text-center">{dev.projects} Projects</p> */}
           </div>
         ))}
       </div>

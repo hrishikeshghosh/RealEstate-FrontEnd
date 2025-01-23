@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import API from "../api/BaseApi";
+
 
 function Commercial() {
   const [commercialProperties, setCommercialProperties] = useState([]);
@@ -10,6 +12,13 @@ function Commercial() {
   const [propertyType, setPropertyType] = useState("");
   const [areaType, setAreaType] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    // Page ke top par scroll karne ke liye
+    window.scrollTo(0, 0);
+  }, [location.pathname]); // Jab bhi route change hoga ye effect chalega
+
 
   useEffect(() => {
     const fetchCommercialProperties = async () => {

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import API from "../api/BaseApi";
 
 const ContactPage = () => {
@@ -12,7 +13,7 @@ const ContactPage = () => {
   const [errors, setErrors] = useState({});
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
-
+  const location = useLocation();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -79,7 +80,10 @@ const ContactPage = () => {
       setError("Something went wrong.");
     }
   };
-
+  useEffect(() => {
+    // Page ke top par scroll karne ke liye
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
   return (
     <div>
       <div className="flex flex-col mt-[20vw] lg:flex-row w-full h-auto lg:mt-[5vw]">

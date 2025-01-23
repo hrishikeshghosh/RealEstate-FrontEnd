@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from "react";
 import BlogPost from "./BlogPost";
 import API from "../api/BaseApi";
+import { useLocation } from "react-router-dom";
 
 const BlogPage = () => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
+  const location = useLocation(); 
+
+  useEffect(() => {
+    // Page ke top par scroll karne ke liye
+    window.scrollTo(0, 0);
+  }, [location.pathname]); // Jab bhi route change hoga ye effect chalega
 
   useEffect(() => {
     const fetchBlogs = async () => {
