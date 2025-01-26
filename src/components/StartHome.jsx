@@ -398,7 +398,7 @@ const location = useLocation();
   <div>
   <div className="w-full relative">
 <p className="text-lg text-gray-800 font-semibold font-manrope">
-<span className="bg-gradient-to- from-indigo-600  to-purple-600  bg-no-repeat bg-bottom p-1 text-white">Featured</span>Properties in Dubai
+<span className="bg-gradient-to-r from-indigo-600  to-purple-600  bg-no-repeat bg-bottom p-1 text-white">Featured</span>Properties in Dubai
 </p>
 </div>
       <span className="text-sm text-zinc-800 font-thin">
