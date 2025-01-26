@@ -90,12 +90,12 @@ const ContactPage = () => {
         <div
           className="lg:w-2/5 h-64 lg:h-auto bg-cover bg-center"
           style={{
-            backgroundImage: "url('https://images.pexels.com/photos/931018/pexels-photo-931018.jpeg')",
+            backgroundImage: "url('/ContactImg.jpeg')",
           }}
         >
           <img
-            className="w-32 lg:w-40 p-4"
-            src="https://www.indonesia.travel/content/dam/indtravelrevamp/en/logo.png"
+            className="w-32 lg:w-25 p-4"
+            src="/logo-01.png"
             alt="Logo"
           />
         </div>

@@ -20,28 +20,27 @@ const AboutUs = () => {
         <div className="grid grid-cols-2 lg:h-[65vh] md:grid-cols-4 gap-4">
           <div className="imgWrapper relative overflow-hidden rounded-lg shadow-lg hover:translate-y-[-5px] transition duration-300">
             <img
-              src="https://images.unsplash.com/photo-1687579521048-217e24217d53?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODg5ODcxNzl8&ixlib=rb-4.0.3&q=85"
-              alt=""
+              src="/public/AboutUs1.jpeg"alt=""
               className="w-full h-full object-cover transform hover:scale-150 transition duration-300"
             />
           </div>
           <div className="imgWrapper relative overflow-hidden rounded-lg shadow-lg hover:translate-y-5 transition duration-300 lg:mt-[5vw]">
             <img
-              src="https://images.unsplash.com/photo-1686580546412-80e80519abd7?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODg5ODcyMDN8&ixlib=rb-4.0.3&q=85"
+              src="/public/AboutUs2.jpeg"
               alt=""
               className="w-full h-full object-cover transform hover:scale-150 transition duration-300"
             />
           </div>
           <div className="imgWrapper relative overflow-hidden rounded-lg shadow-lg hover:translate-y-[-5px] transition duration-300">
             <img
-              src="https://images.unsplash.com/photo-1688133338995-a394ce7314e4?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODg5ODcyMDN8&ixlib=rb-4.0.3&q=85"
+              src="/public/AboutUs3.jpeg"
               alt=""
               className="w-full h-full object-cover transform hover:scale-150 transition duration-300"
             />
           </div>
           <div className="imgWrapper relative overflow-hidden rounded-lg shadow-lg hover:translate-y-5 transition duration-300 lg:mt-[5vw]">
             <img
-              src="https://images.unsplash.com/photo-1686354715732-7e4685269a25?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODg5ODcyNzN8&ixlib=rb-4.0.3&q=85"
+              src="/public/AboutUs5.jpeg"
               alt=""
               className="w-full h-full object-cover transform hover:scale-150 transition duration-300"
             />

@@ -27,6 +27,9 @@ export default {
     animation: {
       scroll: 'scroll 10s linear infinite',
     },
+    // backgroundImage: {
+    //   'custom-bg': "url('/public/Propimg.jpeg')", // Public folder 
+    // },
   },
   plugins: [],
 }

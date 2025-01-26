@@ -244,7 +244,7 @@ const location = useLocation();
         {/* Card 1 */}
         <div className="rounded-xl border-t-2 bg-white p-6 text-center shadow-xl">
           <Link to='/pro'>
-          <div className="mx-auto flex h-16 w-16 -translate-y-12 transform items-center justify-center rounded-full bg-teal-400 shadow-lg shadow-teal-500/40">
+          <div className="mx-auto flex h-16 w-16 -translate-y-12 transform items-center justify-center rounded-full bg-zinc-800 shadow-lg shadow-teal-900/40">
             <svg
               viewBox="0 0 33 46"
               fill="none"
@@ -272,7 +272,7 @@ const location = useLocation();
           data-aos-delay="150"
           className="rounded-xl bg-white border-t-2 p-6 text-center shadow-xl"
         >
-          <div className="mx-auto flex h-16 w-16 -translate-y-12 transform items-center justify-center rounded-full shadow-lg bg-rose-500 shadow-rose-500/40">
+          <div className="mx-auto flex h-16 w-16 -translate-y-12 transform items-center justify-center rounded-full bg-zinc-800 shadow-lg shadow-teal-900/40">
           <svg
               viewBox="0 0 33 46"
               fill="none"
@@ -297,7 +297,7 @@ const location = useLocation();
           data-aos-delay="150"
           className="rounded-xl bg-white border-t-2 p-6 text-center shadow-xl"
         >
-          <div className="mx-auto flex h-16 w-16 -translate-y-12 transform items-center justify-center rounded-full shadow-lg bg-teal-400 shadow-teal-500/40">
+          <div className="mx-auto flex h-16 w-16 -translate-y-12 transform items-center justify-center rounded-full bg-zinc-800 shadow-lg shadow-teal-900/40">
           <svg
               viewBox="0 0 33 46"
               fill="none"
@@ -366,7 +366,8 @@ const location = useLocation();
                 
                         
                         <span
-                            className="px-1.5 text-indigo-600 text-sm font-medium leading-6 group-hover:-translate-x-0.5 transition-all duration-700 ease-in-out">                {showMore ? "Read Less" : "Read More"}
+                            className="px-1.5 text-indigo-600 text-sm font-medium leading-6 group-hover:-translate-x-0.5 transition-all duration-700 ease-in-out">                
+                            {showMore ? "Read Less" : "Read More"}
 </span>
                         <svg className="group-hover:translate-x-0.5 transition-all duration-700 ease-in-out"
                             xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -397,7 +398,7 @@ const location = useLocation();
   <div>
   <div className="w-full relative">
 <p className="text-lg text-gray-800 font-semibold font-manrope">
-<span className="bg-gradient-to-r from-indigo-600  to-purple-600  bg-no-repeat bg-bottom p-1 text-white">Featured</span>Properties in Dubai
+<span className="bg-gradient-to- from-indigo-600  to-purple-600  bg-no-repeat bg-bottom p-1 text-white">Featured</span>Properties in Dubai
 </p>
 </div>
       <span className="text-sm text-zinc-800 font-thin">
@@ -406,7 +407,7 @@ const location = useLocation();
     
   </div>
   <Link
-    className="lg:border-2 text-zinc-700 lg:p-2 lg:text-lg rounded border border-gray-400 px-4 py-2 sm:px-3 sm:py-1 sm:text-sm hover:bg-gray-200 hover:text-zinc-800"
+    className="lg:border-2 text-zinc-100 bg-zinc-800 lg:p-2 lg:text-lg rounded border border-gray-400 px-4 py-2 sm:px-3 sm:py-1 sm:text-sm hover:bg-gray-200 hover:text-zinc-800"
     to="/buy-property"
   >
     More properties
@@ -524,7 +525,7 @@ const location = useLocation();
     
   </div>
   <Link
-    className="lg:border-2 text-zinc-800 lg:p-2 lg:text-lg rounded border border-gray-400 px-4 py-2 sm:px-3 sm:py-1 sm:text-sm hover:bg-gray-200 hover:text-zinc-800"
+    className="lg:border-2 text-zinc-100 bg-zinc-800 lg:p-2 lg:text-lg rounded border border-gray-400 px-4 py-2 sm:px-3 sm:py-1 sm:text-sm hover:bg-gray-200 hover:text-zinc-800"
     to="/off-plan"
   >
     More properties
@@ -616,7 +617,7 @@ const location = useLocation();
     
   </div>
   <Link
-    className="lg:border-2 text-zinc-700 lg:p-2 lg:text-lg rounded border border-gray-400 px-4 py-2 sm:px-3 sm:py-1 sm:text-sm hover:bg-gray-200 hover:text-zinc-800"
+    className="lg:border-2 text-zinc-100 bg-zinc-800 lg:p-2 lg:text-lg rounded border border-gray-400 px-4 py-2 sm:px-3 sm:py-1 sm:text-sm hover:bg-gray-200 hover:text-zinc-800"
     to="/Properties-For-Sale-in-Dubai"
   >
     More properties
@@ -703,7 +704,7 @@ const location = useLocation();
     
   </div>
   <Link
-    className="lg:border-2 text-zinc-800 lg:p-2 lg:text-lg rounded border border-gray-400 px-4 py-2 sm:px-3 sm:py-1 sm:text-sm hover:bg-gray-200 hover:text-zinc-800"
+    className="lg:border-2 text-zinc-100 bg-zinc-800 lg:p-2 lg:text-lg rounded border border-gray-400 px-4 py-2 sm:px-3 sm:py-1 sm:text-sm hover:bg-gray-200 hover:text-zinc-800"
     to="/blogpage"
   >
     View All Posts
