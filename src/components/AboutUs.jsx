@@ -20,27 +20,27 @@ const AboutUs = () => {
         <div className="grid grid-cols-2 lg:h-[65vh] md:grid-cols-4 gap-4">
           <div className="imgWrapper relative overflow-hidden rounded-lg shadow-lg hover:translate-y-[-5px] transition duration-300">
             <img
-              src="/public/AboutUs1.jpeg"alt=""
+              src="/AboutUs1.jpeg"alt=""
               className="w-full h-full object-cover transform hover:scale-150 transition duration-300"
             />
           </div>
           <div className="imgWrapper relative overflow-hidden rounded-lg shadow-lg hover:translate-y-5 transition duration-300 lg:mt-[5vw]">
             <img
-              src="/public/AboutUs2.jpeg"
+              src="/AboutUs2.jpeg"
               alt=""
               className="w-full h-full object-cover transform hover:scale-150 transition duration-300"
             />
           </div>
           <div className="imgWrapper relative overflow-hidden rounded-lg shadow-lg hover:translate-y-[-5px] transition duration-300">
             <img
-              src="/public/AboutUs3.jpeg"
+              src="/AboutUs3.jpeg"
               alt=""
               className="w-full h-full object-cover transform hover:scale-150 transition duration-300"
             />
           </div>
           <div className="imgWrapper relative overflow-hidden rounded-lg shadow-lg hover:translate-y-5 transition duration-300 lg:mt-[5vw]">
             <img
-              src="/public/AboutUs5.jpeg"
+              src="/AboutUs5.jpeg"
               alt=""
               className="w-full h-full object-cover transform hover:scale-150 transition duration-300"
             />
