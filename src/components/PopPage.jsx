@@ -80,7 +80,7 @@ const PopPage = () => {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white w-full max-w-md mx-4 p-6 rounded-lg shadow-lg relative">
             <button
-              className="absolute top-3 right-3 text-white bg-red-500 hover:bg-red-600 rounded-full p-2 px-3 focus:outline-none"
+              className="absolute top-3 right-3 text-white bg-zinc-700 hover:bg-zinc-800 rounded-full p-2 px-3 focus:outline-none"
               onClick={handleClose}
             >
               ✕
