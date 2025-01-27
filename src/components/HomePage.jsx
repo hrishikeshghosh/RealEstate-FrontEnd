@@ -188,9 +188,9 @@ function HomePage() {
               key={subCategory}
               className={`px-4 py-2 rounded-lg border ${
                 selectedType === subCategory
-                  ? "bg-teal-500 text-white"
+                  ? "bg-zinc-900 text-white"
                   : "bg-white text-gray-700"
-              } hover:bg-teal-500 hover:text-white transition`}
+              } hover:bg-zinc-800 hover:text-white transition`}
               onClick={() => setSelectedType(subCategory)}
             >
               {subCategory === "All" ? "🏠 All Properties" : subCategory} ({count})

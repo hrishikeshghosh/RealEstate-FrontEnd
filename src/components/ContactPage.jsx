@@ -103,7 +103,7 @@ const ContactPage = () => {
         <div className="lg:w-3/5 p-6 lg:p-12 bg-white text-gray-800">
           <h1 className="text-2xl lg:text-4xl font-light uppercase tracking-wide mb-4">Contact Us</h1>
           <p className="text-sm lg:text-base mb-6">
-            Planning to visit Dubai soon? Get insider tips on where to go, things to do, and find the best deals.
+          At Lerose Real Estate, we’re here to help you find your dream property. Whether you’re looking to buy, sell, or invest, our team of experts is ready to assist you every step of the way.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-6">

@@ -80,7 +80,7 @@ We care about relationships and building them: We aspire to become the biggest a
           </p>
           <button
             onClick={handleReadMore}
-            className="inline-block text-black p-5 bg-orange-600 lg:w-[10vw] lg:px-6 py-3 rounded-md text-base font-medium hover:bg-orange-700 transition"
+            className="inline-block text-zinc-100 p-5 bg-zinc-900 lg:w-[10vw] lg:px-6 py-3 rounded-md text-base font-medium hover:bg-zinc-900 transition"
           >
             {showMore ? 'Read Less' : 'Read More...'}
           </button>

@@ -34,17 +34,17 @@ const Footer = () => {
         {/* Social Media Section */}
         <div className="text-center">
           <h4 className="text-lg font-semibold mb-2">Follow us</h4>
-          <div className="flex justify-center space-x-4">
-            <a href="https://www.facebook.com/share/X5fGKzq57KhFNpsi/?mibextid=JRoKGi" className="text-amber-500 hover:text-amber-400">
+          <div className="flex justify-center text-black space-x-4">
+            <a href="https://www.facebook.com/share/X5fGKzq57KhFNpsi/?mibextid=JRoKGi" className="">
               <i className="fab fa-facebook-f"></i>
             </a>
-            <a href="https://www.instagram.com/lerose.realestate/profilecard/?igsh=b3Zrcmp6cTRvMjg4" className="text-amber-500 hover:text-amber-400">
+            <a href="https://www.instagram.com/lerose.realestate/profilecard/?igsh=b3Zrcmp6cTRvMjg4" className="">
               <i className="fab fa-instagram"></i>
             </a>
-            <a href="https://www.linkedin.com/company/lerose-realestate/" className="text-amber-500 hover:text-amber-400">
+            <a href="https://www.linkedin.com/company/lerose-realestate/" className="">
               <i className="fab fa-linkedin-in"></i>
             </a>
-            <a href="#" className="text-amber-500 hover:text-amber-400">
+            <a href="#" className="">
               <i className="fab fa-whatsapp"></i>
             </a>
           </div>
