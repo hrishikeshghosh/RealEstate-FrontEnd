@@ -380,7 +380,7 @@ const location = useLocation();
                     <div
                         className="sm:w-[564px] w-full sm:h-[646px] h-full sm:bg-gray-100 rounded-3xl sm:border border-gray-200 relative">
                         <img className="sm:mt-5 sm:ml-5 w-full h-full rounded-3xl object-cover"
-                            src="/AboutUs2.jpeg" alt="about Us image" />
+                            src="/AboutUs2.jpeg" alt="loading..." />
                     </div>
                 </div>
             </div>
