@@ -478,35 +478,7 @@ const location = useLocation();
         ))}
       </div>
       {/* Pagination Controls */}
-      {totalPages > 1 && (
-        <div className="flex justify-center items-center mt-4 space-x-4">
-          <button
-            onClick={handlePrevious}
-            disabled={currentPage === 1}
-            className={`px-4 py-2 rounded ${
-              currentPage === 1
-                ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                : "bg-teal-500 text-white"
-            }`}
-          >
-            Previous
-          </button>
-          <span className="text-sm font-semibold">
-            Page {currentPage} of {totalPages}
-          </span>
-          <button
-            onClick={handleNext}
-            disabled={currentPage === totalPages}
-            className={`px-4 py-2 rounded ${
-              currentPage === totalPages
-                ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                : "bg-teal-500 text-white"
-            }`}
-          >
-            Next
-          </button>
-        </div>
-      )}
+     
     </div>
   </div>
   <div className="max-w-7xl mx-auto p-6 mt-[5vw]">
