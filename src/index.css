@@ -26,3 +26,52 @@
     /* background-color: #023145; */
   color: black;
   }
+
+  ::-webkit-scrollbar{
+    width: 7px;
+    height: 7px;
+    
+
+}
+::-webkit-scrollbar-thumb{
+    background: #000;
+    border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: #6555CD;
+    border-radius: 50px;
+}
+
+
+ select::-ms-expand {
+    display: none;
+} 
+
+.select{
+    position: relative;
+    display: flex;
+    width: 17%;
+    height: 3em;
+    line-height: 3;
+    background: #27272a;
+    overflow: hidden;
+    border-radius: 0.25em;
+}
+
+.select::after{
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #27272a;
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: 0.25s all ease;
+    -o-transition: 0.25s all ease;
+    transition: 0.25s all ease;
+}
+.select:hover::after{
+    color: #6556CD;
+}
+

@@ -19,6 +19,10 @@ const ViewProperty = () => {
     property.Images[2],
     property.Images[3],
     property.Images[4],
+    property.Images[5],
+    property.Images[6],
+    property.Images[7],
+    property.Images[8],
     
 
    
@@ -67,13 +71,13 @@ const ViewProperty = () => {
     
     <div className="w-full flex flex-col mt-[20vw] lg:flex-row lg:justify-between lg:items-start p-4 lg:p-8 lg:mt-[5vw]">
       {/* Left Side: Carousel */}
-      <div className="flex flex-col items-center lg:w-1/2 w-full max-w-7xl gap-6 bg-white rounded-lg shadow-md">
+      <div className="flex flex-col h-[50vh] lg:h-[80vh] items-center lg:w-[50vw] w-full max-w-7xl gap-6 bg-white rounded-lg shadow-md">
         {/* Main Slide */}
-        <div className="w-full aspect-video rounded-lg overflow-hidden bg-gray-200">
+        <div className="w-full h-[100vh] aspect-video rounded-lg overflow-hidden bg-gray-200">
           <img
             src={slides[activeIndex]}
             alt={`Slide ${activeIndex + 1}`}
-            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+            className="w-full h-full lg:h-full lg:object-cover lg:object-right-top hover:scale-105 transition-transform duration-300"
           />
         </div>
 
@@ -91,7 +95,7 @@ const ViewProperty = () => {
 
           {/* Thumbnails */}
           <ul
-            className="h-[10vh] gap-4 flex items-center overflow-x-hidden scrollbar-hide flex-grow"
+            className="h-[10vh] gap-4 overflow-y-hidden flex items-center "
             style={{
               scrollSnapType: "x mandatory ",
             }}
@@ -108,7 +112,7 @@ const ViewProperty = () => {
               >
                 <img
                   src={slide}
-                  alt={`Thumbnail ${index + 1}`}
+                  alt={`${property.title} ${index + 1}`}
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                 />
               </li>

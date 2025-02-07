@@ -689,42 +689,7 @@ const location = useLocation();
       </div>
       
     </div>
-    <div className="max-w-7xl mx-auto mt-[5vw]">
-    {/* <!-- Header --> */}
-    <div className="text-gray-700 text-lg font-medium mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-  <div>
-  <div className="w-full relative">
-<p className="text-lg text-gray-800 font-semibold font-manrope">
-<span className="bg-black bg-no-repeat bg-bottom p-1 text-white">Our</span> Blog
-</p>
-</div>
-      <span className="text-sm text-zinc-800 font-thin">
-        Enjoy our carefully curated selection of some properties as we walk you around them.
-      </span>
-    
-  </div>
-  <Link
-    className="lg:border-2 text-zinc-100 bg-zinc-800 lg:p-2 lg:text-lg rounded border border-gray-400 px-4 py-2 sm:px-3 sm:py-1 sm:text-sm hover:bg-gray-200 hover:text-zinc-800"
-    to="/blogpage"
-  >
-    View All Posts
-  </Link>
-</div>
-<div>
-
-<BlogPage />
-</div>
-    {/* <!-- Property Listings Grid --> */}
-      {/* <!-- Property Card --> */}
-     
-     
- 
-
-      {/* <!-- Duplicate the structure for other properties --> */}
-     
-    
-      
-  </div>
+   
   </div>
 </div>
 
