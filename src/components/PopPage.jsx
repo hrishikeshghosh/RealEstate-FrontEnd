@@ -163,7 +163,7 @@ const PopPage = () => {
                 type="submit"
                 className="w-full bg-zinc-700 text-white py-3 rounded-md hover:bg-zinc-800 transition-all duration-300"
               >
-                Submit Listing
+                Submit
               </button>
             </form>
           </div>

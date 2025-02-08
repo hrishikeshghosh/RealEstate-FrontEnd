@@ -69,6 +69,7 @@ const App = () => {
           <Route path="/blogpage" element={<BlogPage />} />
           <Route path="/blogform" element={<BlogForm />} />
           <Route path="/feed" element={<FeedBack />} />
+          {/* <Route path="/getintouch" element={<PopPage />} /> */}
           {/* <Route element={<Map />} /> */}
           <Route path="/blog/:id/:title" element={<BlogDetails />} />
           <Route path="/allproperties" element={<PropertyListing />} />

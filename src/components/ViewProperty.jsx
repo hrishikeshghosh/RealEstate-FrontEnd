@@ -197,10 +197,11 @@
 // export default ViewProperty;
 
 import React, { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Map from "./Map";
 import API from "../api/BaseApi";
 import DOMPurify from "dompurify"; // Install it using: npm install dompurify
+import PopPage from "./PopPage";
 
 const ViewProperty = () => {
   const location = useLocation();
@@ -211,7 +212,70 @@ const ViewProperty = () => {
   const slides = property?.images || property?.Images?.slice(0, 9) || [];
 
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    contactNumber: "",
+    message: ""
+  });
+  const [errors, setErrors] = useState({});
+  const [successMessage, setSuccessMessage] = useState("");
 
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.name) newErrors.name = "Name is required.";
+    if (!formData.email) {
+      newErrors.email = "Email is required.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Invalid email format.";
+    }
+    if (!formData.contactNumber) {
+      newErrors.contactNumber = "Phone number is required.";
+    } else if (!/^\d{10}$/.test(formData.contactNumber)) {
+      newErrors.contactNumber = "Phone number must be 10 digits.";
+    }
+    if (!formData.message) newErrors.message = "Message is required.";
+    return newErrors;
+  };
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [id]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSuccessMessage("");
+    const validationErrors = validate();
+    setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length === 0) {
+      try {
+        const response = await API.post("/api/contact-user", {
+          name: formData?.name,
+          email: formData?.email,
+          contactNumber: formData?.contactNumber,
+          message: formData?.message,
+        });
+
+        if (response.status && response.status >= 200 && response.status < 300) {
+          setSuccessMessage("User data submitted successfully!");
+          setErrors({});
+          setFormData({ name: "", email: "", contactNumber: "", message: "" });
+        } else {
+          setErrors({ api: "Failed to submit user data. Please try again." });
+        }
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        setErrors({ api: "Something went wrong. Please try again later." });
+      }
+    }
+  };
+
+  const handleClose = () => {
+    setIsVisible(false);
+  };
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "ArrowLeft") setActiveIndex((prev) => Math.max(prev - 1, 0));
@@ -234,6 +298,7 @@ const ViewProperty = () => {
 
   return (
     <>
+    
       <div className="w-full flex flex-col mt-[20vw] lg:flex-row lg:justify-between lg:items-start p-4 lg:p-8 lg:mt-[5vw]">
         {/* Left: Image Carousel */}
         <div className="flex flex-col h-[50vh] lg:h-[80vh] items-center lg:w-[50vw] w-full max-w-7xl gap-6 bg-white rounded-lg shadow-md">
@@ -282,9 +347,105 @@ const ViewProperty = () => {
 
         {/* Right: Property Details */}
         <div className="w-full lg:w-1/2 mt-8 lg:mt-0 lg:pl-8">
-          <button onClick={() => navigate("/")} className="bg-teal-500 text-white px-4 py-2 rounded mb-8">
+        <div className="flex w-full justify-evenly lg:justify-start gap-5">
+
+          <button onClick={() => navigate("/")} className="bg-zinc-900  text-white px-2 py-2 rounded mb-8">
             Back to Listings
           </button>
+          <button
+        onClick={() => setIsVisible(true)}
+        className="bg-zinc-900 text-white px-2 py-2 rounded mb-8"
+      >
+        Get in Touch
+      </button>
+      {isVisible && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white w-full max-w-md mx-4 p-6 rounded-lg shadow-lg relative">
+            <button
+              className="absolute top-3 right-3 text-black  hover:bg-zinc-200 rounded-full p-2 px-3 focus:outline-none"
+              onClick={handleClose}
+            >
+              ✕
+            </button>
+            <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">
+              Submit Your Details
+            </h2>
+            {errors.api && (
+              <p className="text-red-500 text-center mb-4">{errors.api}</p>
+            )}
+            {successMessage && (
+              <p className="text-green-500 text-center mb-4">
+                {successMessage}
+              </p>
+            )}
+            <form onSubmit={handleSubmit}>
+              <div className="mb-4">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                  Name*
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Enter your name"
+                  className="w-full border p-3 rounded-md border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                />
+                {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+              </div>
+              <div className="mb-4">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                  Email*
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Enter your email"
+                  className="w-full border p-3 rounded-md border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                />
+                {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+              </div>
+              <div className="mb-4">
+                <label htmlFor="contactNumber" className="block text-sm font-medium text-gray-700">
+                  Phone Number*
+                </label>
+                <input
+                  type="number"
+                  id="contactNumber"
+                  name="contactNumber"
+                  value={formData.contactNumber}
+                  onChange={handleChange}
+                  placeholder="Enter your phone number"
+                  className="w-full border p-3 rounded-md border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                />
+                {errors.contactNumber && <p className="text-red-500 text-sm mt-1">{errors.contactNumber}</p>}
+              </div>
+              <div className="mb-4">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+                  Message*
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Enter your message"
+                  className="w-full border p-3 rounded-md border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                />
+                {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
+              </div>
+              <button type="submit" className="w-full bg-zinc-700 text-white py-3 rounded-md hover:bg-zinc-800 transition-all duration-300">
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+        </div>
           <h1 className="text-2xl font-bold mb-4 text-gray-900">{property.title}</h1>
 
           <div className="flex justify-between text-sm text-gray-800 mb-4">
