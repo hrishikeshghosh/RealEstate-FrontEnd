@@ -1,65 +1,231 @@
+// import React, { useState, useEffect } from "react";
+// import { useLocation, useNavigate } from "react-router-dom";
+// import RequestForm from "./RequestForm";
+// import FeedBack from "./Map";
+// import Map from "./Map";
+// import API from "../api/BaseApi";
+
+
+// const ViewProperty = () => {
+//   const location = useLocation();
+//   const navigate = useNavigate();
+
+//   // Extract the property details from the state
+//   const property = location.state?.property;
+
+//   const slides = property?.images || [
+//     property.Images[0],
+//     property.Images[1], 
+//     property.Images[2],
+//     property.Images[3],
+//     property.Images[4],
+//     property.Images[5],
+//     property.Images[6],
+//     property.Images[7],
+//     property.Images[8],
+    
+
+   
+//   ];
+
+//   const [activeIndex, setActiveIndex] = useState(0);
+
+//   const handlePrev = () => {
+//     if (activeIndex > 0) {
+//       setActiveIndex(activeIndex - 1);
+//     }
+//   };
+
+//   const handleNext = () => {
+//     if (activeIndex < slides.length - 1) {
+//       setActiveIndex(activeIndex + 1);
+//     }
+//   };
+
+//   const handleKeyDown = (e) => {
+//     if (e.key === "ArrowLeft") handlePrev();
+//     if (e.key === "ArrowRight") handleNext();
+//   };
+
+//   useEffect(() => {
+//     window.addEventListener("keydown", handleKeyDown);
+//     return () => window.removeEventListener("keydown", handleKeyDown);
+//   }, [activeIndex]);
+
+//   if (!property) {
+//     return (
+//       <div className="container mx-auto px-4 py-8 text-center mt-[5vw]">
+//         <h1 className="text-2xl font-bold mb-4">Property Not Found</h1>
+//         <button
+//           onClick={() => navigate("/")}
+//           className="bg-teal-500 text-white px-4 py-2 rounded"
+//         >
+//           Go Back
+//         </button>
+//       </div>
+//     );
+//   }
+
+//   return (
+//     <>
+    
+//     <div className="w-full flex flex-col mt-[20vw] lg:flex-row lg:justify-between lg:items-start p-4 lg:p-8 lg:mt-[5vw]">
+//       {/* Left Side: Carousel */}
+//       <div className="flex flex-col h-[50vh] lg:h-[80vh] items-center lg:w-[50vw] w-full max-w-7xl gap-6 bg-white rounded-lg shadow-md">
+//         {/* Main Slide */}
+//         <div className="w-full h-[100vh] aspect-video rounded-lg overflow-hidden bg-gray-200">
+//           <img
+//             src={slides[activeIndex]}
+//             alt={`Slide ${activeIndex + 1}`}
+//             className="w-full h-full lg:h-full lg:object-cover lg:object-right-top hover:scale-105 transition-transform duration-300"
+//           />
+//         </div>
+
+//         {/* Thumbnail Navigation */}
+//         <div className="flex items-center w-full gap-4 relative">
+//           {/* Previous Button */}
+//           <button
+//             className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-800 text-white disabled:opacity-50 shadow-md hover:scale-105 transition-transform"
+//             onClick={handlePrev}
+//             disabled={activeIndex === 0}
+//             aria-label="Previous slide"
+//           >
+//             &#x25C0;
+//           </button>
+
+//           {/* Thumbnails */}
+//           <ul
+//             className="h-[10vh] gap-4 overflow-y-hidden flex items-center "
+//             style={{
+//               scrollSnapType: "x mandatory ",
+//             }}
+//           >
+//             {slides.map((slide, index) => (
+//               <li
+//                 key={index}
+//                 className={`w-[20vw] sm:w-[10vw] h-[8vh] flex-shrink-0 rounded-lg overflow-hidden cursor-pointer scroll-snap-align-center border-2 transition-transform duration-300 ${
+//                   activeIndex === index
+//                     ? "border-blue-600 scale-105"
+//                     : "border-gray-300"
+//                 }`}
+//                 onClick={() => setActiveIndex(index)}
+//               >
+//                 <img
+//                   src={slide}
+//                   alt={`${property.title} ${index + 1}`}
+//                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+//                 />
+//               </li>
+//             ))}
+//           </ul>
+
+//           {/* Next Button */}
+//           <button
+//             className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-800 text-white disabled:opacity-50 shadow-md hover:scale-105 transition-transform"
+//             onClick={handleNext}
+//             disabled={activeIndex === slides.length - 1}
+//             aria-label="Next slide"
+//           >
+//             &#x25B6;
+//           </button>
+//         </div>
+//       </div>
+
+//       {/* Right Side: Property Details */}
+//       <div className="w-full lg:w-1/2 mt-8 lg:mt-0 lg:pl-8">
+//         <button
+//           onClick={() => navigate("/")}
+//           className="bg-teal-500 text-white px-4 py-2 rounded mb-8"
+//         >
+//           Back to Listings
+//         </button>
+//         <h1 className="text-2xl font-bold mb-4 text-gray-900">{property.title}</h1>
+//         {/* <p className="text-gray-800 mb-6">{property.description}</p> */}
+//         {/* <div className="flex justify-between text-sm text-gray-800 mb-4">
+//           <div className="text-zinc-800">
+//             <span className="block text-gray-800 font-semibold">Bedrooms</span>
+//             {property.bedrooms}
+//           </div>
+//           <div className="text-zinc-800">
+//             <span className="block text-gray-800 font-semibold">Bathrooms</span>
+//             {property.bathrooms}
+//           </div>
+//           <div className="text-zinc-800">
+//             <span className="block text-gray-800 font-semibold">Area</span>
+//             {property.area}
+//           </div>
+//         </div> */}
+//         <div className="flex justify-between text-sm text-gray-800 mb-4">
+//                 <div>
+//                   <span className="block font-semibold">Location</span>
+//                   <div className="flex items-center">
+//                     <i className="ri-map-pin-5-fill text-red-600 mr-2"></i>
+//                     {property.location}
+//                   </div>
+//                 </div>
+//                 <div>
+//                   <span className="block font-semibold">Bedrooms</span>
+//                   <div className="flex items-center">
+//                     <i className="fas fa-th-large text-gray-500 mr-2"></i>
+//                     {property.bedrooms}
+//                   </div>
+//                 </div>
+//                 <div>
+//                   <span className="block font-semibold">Area</span>
+//                   <div className="flex items-center">
+//                     <i className="fas fa-vector-square text-gray-500 mr-2"></i>
+//                     {property.area}
+//                   </div>
+//                 </div>
+//               </div>
+//         <div className="mt-6">
+//           <span className="text-lg font-bold text-teal-500">{property.price} AED</span>
+//         </div>
+//         <h2 className="text-2xl font-extrabold mt-10">
+//           Description
+//         </h2>
+//         <p className="text-gray-800 mb-6">{property.description}</p>
+        
+//       </div>
+      
+//     </div>
+//     <Map />
+//     </>
+//   );
+// };
+
+// export default ViewProperty;
+
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import RequestForm from "./RequestForm";
-import FeedBack from "./Map";
 import Map from "./Map";
 import API from "../api/BaseApi";
-
+import DOMPurify from "dompurify"; // Install it using: npm install dompurify
 
 const ViewProperty = () => {
   const location = useLocation();
   const navigate = useNavigate();
-
-  // Extract the property details from the state
   const property = location.state?.property;
 
-  const slides = property?.images || [
-    property.Images[0],
-    property.Images[1], 
-    property.Images[2],
-    property.Images[3],
-    property.Images[4],
-    property.Images[5],
-    property.Images[6],
-    property.Images[7],
-    property.Images[8],
-    
-
-   
-  ];
+  // Ensure slides array is valid
+  const slides = property?.images || property?.Images?.slice(0, 9) || [];
 
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const handlePrev = () => {
-    if (activeIndex > 0) {
-      setActiveIndex(activeIndex - 1);
-    }
-  };
-
-  const handleNext = () => {
-    if (activeIndex < slides.length - 1) {
-      setActiveIndex(activeIndex + 1);
-    }
-  };
-
-  const handleKeyDown = (e) => {
-    if (e.key === "ArrowLeft") handlePrev();
-    if (e.key === "ArrowRight") handleNext();
-  };
-
   useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "ArrowLeft") setActiveIndex((prev) => Math.max(prev - 1, 0));
+      if (e.key === "ArrowRight") setActiveIndex((prev) => Math.min(prev + 1, slides.length - 1));
+    };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [activeIndex]);
+  }, [slides.length]);
 
   if (!property) {
     return (
       <div className="container mx-auto px-4 py-8 text-center mt-[5vw]">
         <h1 className="text-2xl font-bold mb-4">Property Not Found</h1>
-        <button
-          onClick={() => navigate("/")}
-          className="bg-teal-500 text-white px-4 py-2 rounded"
-        >
+        <button onClick={() => navigate("/")} className="bg-teal-500 text-white px-4 py-2 rounded">
           Go Back
         </button>
       </div>
@@ -68,130 +234,102 @@ const ViewProperty = () => {
 
   return (
     <>
-    
-    <div className="w-full flex flex-col mt-[20vw] lg:flex-row lg:justify-between lg:items-start p-4 lg:p-8 lg:mt-[5vw]">
-      {/* Left Side: Carousel */}
-      <div className="flex flex-col h-[50vh] lg:h-[80vh] items-center lg:w-[50vw] w-full max-w-7xl gap-6 bg-white rounded-lg shadow-md">
-        {/* Main Slide */}
-        <div className="w-full h-[100vh] aspect-video rounded-lg overflow-hidden bg-gray-200">
-          <img
-            src={slides[activeIndex]}
-            alt={`Slide ${activeIndex + 1}`}
-            className="w-full h-full lg:h-full lg:object-cover lg:object-right-top hover:scale-105 transition-transform duration-300"
-          />
+      <div className="w-full flex flex-col mt-[20vw] lg:flex-row lg:justify-between lg:items-start p-4 lg:p-8 lg:mt-[5vw]">
+        {/* Left: Image Carousel */}
+        <div className="flex flex-col h-[50vh] lg:h-[80vh] items-center lg:w-[50vw] w-full max-w-7xl gap-6 bg-white rounded-lg shadow-md">
+          {/* Main Image */}
+          <div className="w-full h-[100vh] aspect-video rounded-lg overflow-hidden bg-gray-200">
+            <img
+              src={slides[activeIndex]}
+              alt={`Slide ${activeIndex + 1}`}
+              className="w-full h-full lg:object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+
+          {/* Thumbnails & Navigation */}
+          <div className="flex items-center w-full gap-4">
+            {/* <button
+              className="w-12 h-12 rounded-full bg-gray-800 text-white disabled:opacity-50 shadow-md hover:scale-105 transition-transform"
+              onClick={() => setActiveIndex((prev) => Math.max(prev - 1, 0))}
+              disabled={activeIndex === 0}
+            >
+              &#x25C0;
+            </button> */}
+
+            <ul className="h-[10vh] gap-4 flex items-center overflow-x-auto">
+              {slides.map((slide, index) => (
+                <li
+                  key={index}
+                  className={`w-[20vw] sm:w-[10vw] h-[8vh] flex-shrink-0 rounded-lg overflow-hidden cursor-pointer border-2 transition-transform duration-300 ${
+                    activeIndex === index ? "border-blue-600 scale-105" : "border-gray-300"
+                  }`}
+                  onClick={() => setActiveIndex(index)}
+                >
+                  <img src={slide} alt={`Thumbnail ${index + 1}`} className="w-full h-full object-cover hover:scale-110 transition-transform duration-300" />
+                </li>
+              ))}
+            </ul>
+
+            {/* <button
+              className="w-12 h-12 rounded-full bg-gray-800 text-white disabled:opacity-50 shadow-md hover:scale-105 transition-transform"
+              onClick={() => setActiveIndex((prev) => Math.min(prev + 1, slides.length - 1))}
+              disabled={activeIndex === slides.length - 1}
+            >
+              &#x25B6;
+            </button> */}
+          </div>
         </div>
 
-        {/* Thumbnail Navigation */}
-        <div className="flex items-center w-full gap-4 relative">
-          {/* Previous Button */}
-          <button
-            className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-800 text-white disabled:opacity-50 shadow-md hover:scale-105 transition-transform"
-            onClick={handlePrev}
-            disabled={activeIndex === 0}
-            aria-label="Previous slide"
-          >
-            &#x25C0;
+        {/* Right: Property Details */}
+        <div className="w-full lg:w-1/2 mt-8 lg:mt-0 lg:pl-8">
+          <button onClick={() => navigate("/")} className="bg-teal-500 text-white px-4 py-2 rounded mb-8">
+            Back to Listings
           </button>
+          <h1 className="text-2xl font-bold mb-4 text-gray-900">{property.title}</h1>
 
-          {/* Thumbnails */}
-          <ul
-            className="h-[10vh] gap-4 overflow-y-hidden flex items-center "
-            style={{
-              scrollSnapType: "x mandatory ",
-            }}
-          >
-            {slides.map((slide, index) => (
-              <li
-                key={index}
-                className={`w-[20vw] sm:w-[10vw] h-[8vh] flex-shrink-0 rounded-lg overflow-hidden cursor-pointer scroll-snap-align-center border-2 transition-transform duration-300 ${
-                  activeIndex === index
-                    ? "border-blue-600 scale-105"
-                    : "border-gray-300"
-                }`}
-                onClick={() => setActiveIndex(index)}
-              >
-                <img
-                  src={slide}
-                  alt={`${property.title} ${index + 1}`}
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                />
-              </li>
-            ))}
-          </ul>
-
-          {/* Next Button */}
-          <button
-            className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-800 text-white disabled:opacity-50 shadow-md hover:scale-105 transition-transform"
-            onClick={handleNext}
-            disabled={activeIndex === slides.length - 1}
-            aria-label="Next slide"
-          >
-            &#x25B6;
-          </button>
-        </div>
-      </div>
-
-      {/* Right Side: Property Details */}
-      <div className="w-full lg:w-1/2 mt-8 lg:mt-0 lg:pl-8">
-        <button
-          onClick={() => navigate("/")}
-          className="bg-teal-500 text-white px-4 py-2 rounded mb-8"
-        >
-          Back to Listings
-        </button>
-        <h1 className="text-2xl font-bold mb-4 text-gray-900">{property.title}</h1>
-        {/* <p className="text-gray-800 mb-6">{property.description}</p> */}
-        {/* <div className="flex justify-between text-sm text-gray-800 mb-4">
-          <div className="text-zinc-800">
-            <span className="block text-gray-800 font-semibold">Bedrooms</span>
-            {property.bedrooms}
-          </div>
-          <div className="text-zinc-800">
-            <span className="block text-gray-800 font-semibold">Bathrooms</span>
-            {property.bathrooms}
-          </div>
-          <div className="text-zinc-800">
-            <span className="block text-gray-800 font-semibold">Area</span>
-            {property.area}
-          </div>
-        </div> */}
-        <div className="flex justify-between text-sm text-gray-800 mb-4">
-                <div>
-                  <span className="block font-semibold">Location</span>
-                  <div className="flex items-center">
-                    <i className="ri-map-pin-5-fill text-red-600 mr-2"></i>
-                    {property.location}
-                  </div>
-                </div>
-                <div>
-                  <span className="block font-semibold">Bedrooms</span>
-                  <div className="flex items-center">
-                    <i className="fas fa-th-large text-gray-500 mr-2"></i>
-                    {property.bedrooms}
-                  </div>
-                </div>
-                <div>
-                  <span className="block font-semibold">Area</span>
-                  <div className="flex items-center">
-                    <i className="fas fa-vector-square text-gray-500 mr-2"></i>
-                    {property.area}
-                  </div>
-                </div>
+          <div className="flex justify-between text-sm text-gray-800 mb-4">
+            <div>
+              <span className="block font-semibold">Location</span>
+              <div className="flex items-center">
+                <i className="ri-map-pin-5-fill text-red-600 mr-2"></i>
+                {property.location}
               </div>
-        <div className="mt-6">
-          <span className="text-lg font-bold text-teal-500">{property.price} AED</span>
+            </div>
+            <div>
+              <span className="block font-semibold">Bedrooms</span>
+              <div className="flex items-center">
+                <i className="fas fa-th-large text-gray-500 mr-2"></i>
+                {property.bedrooms}
+              </div>
+            </div>
+            <div>
+              <span className="block font-semibold">Area</span>
+              <div className="flex items-center">
+                <i className="fas fa-vector-square text-gray-500 mr-2"></i>
+                {property.area}
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6">
+            <span className="text-lg font-bold text-teal-500">{property.price} AED</span>
+          </div>
+
+          {/* Description Section */}
+          <h2 className="text-2xl font-extrabold mt-10">Description</h2>
+
+          {/* Option 1: Render HTML safely (use this if `description` contains HTML tags) */}
+          <p className="text-gray-800 mb-6" dangerouslySetInnerHTML={{ __html: property.description }}></p>
+
+          {/* Option 2: Render Plain Text (Use this if you want to remove HTML tags) */}
+          {/* <p className="text-gray-800 mb-6">{DOMPurify.sanitize(property.description)}</p> */}
         </div>
-        <h2 className="text-2xl font-extrabold mt-10">
-          Description
-        </h2>
-        <p className="text-gray-800 mb-6">{property.description}</p>
-        
       </div>
-      
-    </div>
-    <Map />
+
+      <Map />
     </>
   );
 };
 
 export default ViewProperty;
+
