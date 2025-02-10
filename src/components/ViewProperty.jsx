@@ -349,9 +349,7 @@ const ViewProperty = () => {
         <div className="w-full lg:w-1/2 mt-8 lg:mt-0 lg:pl-8">
         <div className="flex w-full  lg:justify-start gap-5">
 
-          <button onClick={() => navigate("/")} className="bg-zinc-900  text-white px-2 py-2 rounded mb-8">
-            Back to Listings
-          </button>
+         
           
       {isVisible && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
@@ -470,9 +468,12 @@ const ViewProperty = () => {
           <div className="mt-6">
             <span className="text-lg font-bold text-teal-500">{property.price} AED</span>
           </div>
+          <button onClick={() => navigate("/")} className="bg-zinc-900  text-white px-2 py-2 rounded mb-8">
+            Back to Listings
+          </button>
           <button
         onClick={() => setIsVisible(true)}
-        className="bg-zinc-900 text-white px-2 py-2 rounded mt-8"
+        className="bg-zinc-900 text-white px-2 py-2 rounded mt-8 ml-5"
       >
         Get in Touch
       </button>
