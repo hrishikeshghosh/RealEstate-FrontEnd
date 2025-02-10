@@ -468,7 +468,7 @@ const ViewProperty = () => {
           <div className="mt-6">
             <span className="text-lg font-bold text-teal-500">{property.price} AED</span>
           </div>
-          <button onClick={() => navigate("/")} className="bg-zinc-900  text-white px-2 py-2 rounded mb-8">
+          <button onClick={() => navigate("/")} className="bg-zinc-900  text-white px-2 py-2 rounded">
             Back to Listings
           </button>
           <button
