@@ -510,7 +510,7 @@ const location = useLocation();
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {offPlanProperties.map((property) => (
           <div
-            key={property.id}
+            key={property._id}
             className="bg-white shadow-md rounded-lg overflow-hidden relative group"
           >
             {property.featured && (
@@ -527,7 +527,7 @@ const location = useLocation();
               <div className="absolute inset-0 bg-teal-600 opacity-0 group-hover:opacity-50 transition duration-300"></div>
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                 <Link
-                  to={`/property/${property.id}`}
+                  to={`/property/${property._id}`}
                   state={{ property }}
                   className="mt-4 inline-block bg-teal-500 text-white px-4 py-2 rounded text-sm"
                 >
@@ -570,6 +570,7 @@ const location = useLocation();
           </div>
         ))}
       </div>
+      
       </div>
     </div>
     {/* pagination control */}
