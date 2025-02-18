@@ -1,9 +1,7 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import BlogPage from './BlogPage';
 
 
 import API from '../api/BaseApi';
