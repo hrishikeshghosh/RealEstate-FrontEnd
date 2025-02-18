@@ -79,6 +79,8 @@ function Commercial() {
           loop
           autoPlay
           muted
+          playsInline
+          controls={false}
           className="w-full h-[70vh] sm:h-full object-cover"
           src="/excel-properties-dubai.webm"
           alt=""
@@ -245,7 +247,7 @@ function Commercial() {
         )}
       </section>
     </div>
-  );
+  )
 }
 
 export default Commercial;

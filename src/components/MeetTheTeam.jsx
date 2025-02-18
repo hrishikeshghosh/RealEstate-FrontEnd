@@ -6,7 +6,7 @@ const MeetTheTeam = () => {
       id: 1,
       name: "Zahraa Hussein",
       role: "CEO / Agent Representative",
-      image: "https://media.istockphoto.com/id/1952108243/photo/photo-of-young-women-in-winter-wear-standing-on-yellow-background-stock-photo.jpg?s=2048x2048&w=is&k=20&c=yMkepGphpcs_VfG3rB8tR6pBr6j2bF4SJJAWLzvcj3Y=",
+      image: "https://images.unsplash.com/photo-1604904612715-47bf9d9bc670?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZmVtYWxlJTIwbW9kZWx8ZW58MHx8MHx8fDA%3D",
     },
     {
       id: 2,
