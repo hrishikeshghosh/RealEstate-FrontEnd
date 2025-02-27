@@ -35,7 +35,8 @@ const PropertyForm = () => {
     }
 
     if (!formData.contactNumber || !/^\d{10}$/.test(formData.contactNumber)) {
-      newErrors.contactNumber = "Mobile number must be a valid 10-digit number.";
+      newErrors.contactNumber =
+        "Mobile number must be a valid 10-digit number.";
     }
 
     if (!formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
@@ -58,15 +59,15 @@ const PropertyForm = () => {
 
     try {
       const response = await API.post("/api/contact-user", {
-        name:formData?.name,
-        email:formData?.email,
-        contactNumber:formData?.contactNumber,
-        propertyArea:formData?.propertyArea,
-        propertyType:formData?.propertyType,
-        message:formData?.message
+        name: formData?.name,
+        email: formData?.email,
+        contactNumber: formData?.contactNumber,
+        propertyArea: formData?.propertyArea,
+        propertyType: formData?.propertyType,
+        message: formData?.message,
       });
 
-      if (response.status && response.status>=200 && response.status<300) {
+      if (response.status && response.status >= 200 && response.status < 300) {
         setSuccess("User data submitted successfully!");
         setError("");
         setFormData({
@@ -92,14 +93,16 @@ const PropertyForm = () => {
     <div>
       <div
         className="relative flex flex-col lg:flex-row items-center justify-between bg-cover bg-center min-h-screen text-zinc-500 lg:mt-[10vh] mt-[5vh]"
-       style={{ backgroundImage: "url('/Propimg.jpeg')" }}
+        style={{ backgroundImage: "url('/Propimg.jpeg')" }}
       >
         {/* Left Section */}
         <div className="w-full lg:w-1/2 px-5 lg:pl-16 mb-8 lg:mb-0 text-center lg:text-left relative lg:-top-[15vw] top-[5vh]">
           <h1 className="text-2xl lg:text-6xl font-normal mb-4 font-[real2]">
             LOOKING TO SELL YOUR PROPERTY?
           </h1>
-          <p className="text-lg lg:text-xl font-[real2]">LIST WITH US TODAY !</p>
+          <p className="text-lg lg:text-xl font-[real2]">
+            LIST WITH US TODAY !
+          </p>
         </div>
 
         {/* Right Section - Form */}
@@ -107,7 +110,10 @@ const PropertyForm = () => {
           <form onSubmit={handleSubmit} className="space-y-5 lg:space-y-7">
             {/* Name Field */}
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Name*
               </label>
               <input
@@ -119,12 +125,17 @@ const PropertyForm = () => {
                 value={formData.name}
                 onChange={handleChange}
               />
-              {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
+              {errors.name && (
+                <p className="text-red-500 text-sm">{errors.name}</p>
+              )}
             </div>
 
             {/* Email Field */}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
                 E-mail*
               </label>
               <input
@@ -136,32 +147,40 @@ const PropertyForm = () => {
                 value={formData.email}
                 onChange={handleChange}
               />
-              {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+              {errors.email && (
+                <p className="text-red-500 text-sm">{errors.email}</p>
+              )}
             </div>
 
             {/* Phone Number Field */}
             <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="phone"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Phone number*
               </label>
               <div className="relative mt-1">
                 <select className="absolute inset-y-0 left-0 border-gray-300 bg-gray-50 text-gray-700 rounded-l-md">
-      <option value="+971">🇦🇪 +971</option>
-                <option value="+1">🇺🇸 +1</option>
-      <option value="+44">🇬🇧 +44</option>
-      <option value="+61">🇦🇺 +61</option>
-      <option value="+81">🇯🇵 +81</option>
-      <option value="+86">🇨🇳 +86</option>
+                  <option value="+971">🇦🇪 +971</option>
+                  <option value="+1">🇺🇸 +1</option>
+                  <option value="+44">🇬🇧 +44</option>
+                  <option value="+61">🇦🇺 +61</option>
+                  <option value="+81">🇯🇵 +81</option>
+                  <option value="+86">🇨🇳 +86</option>
                   <option>🇮🇳 +91</option>
                 </select>
                 <input
-                  type="tel"
+                  type="tel" // Use "tel" instead of "number"
                   id="phone"
-                  placeholder=" 81234 56789"
+                  placeholder="81234 56789"
                   name="contactNumber"
                   value={formData.contactNumber}
                   onChange={handleChange}
                   className="w-full border-2 p-3 pl-20 text-zinc-800 rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                  minLength="9" // Minimum 9 digits
+                  maxLength="15" // Maximum 15 digits
+                  pattern="[0-9]*" // Allow only numeric input
                 />
                 {errors.contactNumber && (
                   <p className="text-red-500 text-sm">{errors.contactNumber}</p>
@@ -171,7 +190,10 @@ const PropertyForm = () => {
 
             {/* Property Type Field */}
             <div>
-              <label htmlFor="propertyType" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="propertyType"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Property Type
               </label>
               <select
@@ -192,7 +214,10 @@ const PropertyForm = () => {
 
             {/* Area Field */}
             <div>
-              <label htmlFor="area" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="area"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Area
               </label>
               <input
@@ -208,7 +233,10 @@ const PropertyForm = () => {
 
             {/* Message Field */}
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Message
               </label>
               <textarea
@@ -230,7 +258,9 @@ const PropertyForm = () => {
             </button>
 
             {/* Success/Error Messages */}
-            {success && <p className="text-green-500 text-sm mt-2">{success}</p>}
+            {success && (
+              <p className="text-green-500 text-sm mt-2">{success}</p>
+            )}
             {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
           </form>
         </div>

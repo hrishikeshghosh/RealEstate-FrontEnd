@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 
 
 import API from '../api/BaseApi';
+import { Helmet } from 'react-helmet';
 
 const StartHome = ({ id, title, description, image }) => {
   const [properties, setProperties] = useState([]);
@@ -130,6 +131,17 @@ const location = useLocation();
 
   return (
     <div className=''>
+        <Helmet>
+        <title>Real Estate Dubai - Your Dream Properties - Home</title>
+        <meta
+          name="description"
+          content="Explore top properties in Dubai with expert guidance."
+        />
+        <meta
+          name="keywords"
+          content="Real Estate, Dubai, Properties, Rent, Buy"
+        />
+      </Helmet>
       
         <div className="w-full h-[70vh] relative lg:mt-[0vw] sm:h-[100vh]">
   {/* <!-- Video Background --> */}
@@ -415,7 +427,7 @@ const location = useLocation();
     {/* <!-- Property Listings Grid --> */}
     <div className="container mx-auto px-4 py-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {residentialProperties.map((property) => (
+        {commercialProperties.map((property) => (
           <div
             key={property._id}
             className="bg-white shadow-md rounded-lg overflow-hidden relative group"
