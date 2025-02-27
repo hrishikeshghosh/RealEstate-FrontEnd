@@ -38,11 +38,17 @@ import { Icon } from '@iconify/react/dist/iconify.js';
 const App = () => {
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <Helmet>
-                <title>Real Estate Dubai - Your Dream Properties</title>
-                <meta name="description" content="Explore top properties in Dubai with expert guidance." />
-                <meta name="keywords" content="Real Estate, Dubai, Properties, Rent, Buy" />
-            </Helmet>
+   <Helmet>
+        <title>Real Estate Dubai - Your Dream Properties - Home</title>
+        <meta
+          name="description"
+          content="Explore top properties in Dubai with expert guidance."
+        />
+        <meta
+          name="keywords"
+          content="Real Estate, Dubai, Properties, Rent, Buy"
+        />
+      </Helmet>
       {/* Navbar at the top */}
      
 
