@@ -72,7 +72,7 @@ function HomePage() {
   return (
     <div>
       {/* Hero Section */}
-      <div className="w-full h-full relative">
+      <div className="w-full h-[70vh] relative lg:h-[70vh] lg:mt-[0vw] sm:h-[100vh]">
         <video
           loop
           autoPlay
