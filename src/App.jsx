@@ -31,7 +31,6 @@ import SearchOffPlan from './components/SearchOffPlan';
 import Demo from './components/Demo';
 import TermsConditions from './components/Terms & Conditions';
 import ScrollToTop from './components/ScrollToTop';
-import { Icon } from '@iconify/react/dist/iconify.js';
 
 
 
@@ -58,15 +57,6 @@ const App = () => {
 
       {/* Main content with Routes */}
       <main style={{ flex: 1 }}>
-      <div className=' fixed bottom-0 right-0 m-8 z-50'> 
-      <div className=' p-3 rounded-full bg-black/60 backdrop-blur-sm cursor-pointer'>
-      <Icon icon={`logos:whatsapp-icon`} className=' text-4xl' onClick={(e)=>{
-        e.stopPropagation()
-        e.preventDefault()
-        window.open(`https://wa.me/c/971589896002`)
-      }}/>
-      </div>
-      </div>
         <Routes>
           <Route path="/" element={<StartHome />} />
           <Route path="/residential-properties" element={<HomePage />} />

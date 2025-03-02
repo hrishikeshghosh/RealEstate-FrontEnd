@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link,useNavigate} from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import API from "../api/BaseApi";
-import { Helmet } from "react-helmet";
 
 function HomePage() {
   const [residentialProperties, setResidentialProperties] = useState([]); // Residential properties state
@@ -80,25 +79,12 @@ function HomePage() {
 
   return (
     <div>
-        <Helmet>
-        <title>Real Estate Dubai - Your Dream Properties - Home</title>
-        <meta
-          name="description"
-          content="Explore top properties in Dubai with expert guidance."
-        />
-        <meta
-          name="keywords"
-          content="Real Estate, Dubai, Properties, Rent, Buy"
-        />
-      </Helmet>
       {/* Hero Section */}
       <div className="w-full h-[70vh] relative lg:h-[70vh] lg:mt-[0vw] sm:h-[100vh]">
         <video
           loop
           autoPlay
-          controls={false}
           muted
-          playsInline 
           className="relative z-0 w-full h-[70vh] sm:h-full object-cover object-center"
           src="/excel-properties-dubai.webm"
           alt=""
