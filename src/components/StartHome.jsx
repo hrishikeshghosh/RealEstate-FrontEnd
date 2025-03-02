@@ -143,14 +143,14 @@ const location = useLocation();
         />
       </Helmet>
       
-        <div className="w-full h-[70vh] relative lg:mt-[0vw] sm:h-[100vh]">
+        <div className="w-full h-fit relative">
   {/* <!-- Video Background --> */}
   
   <video
     loop
     autoPlay
     muted
-    className="relative z-0 w-full h-[70vh] sm:h-full object-cover object-center"
+    className="relative z-0 w-full h-full  object-cover object-center"
     // src="/src/assets/excel-properties-dubai.webm"
     src='/Website Content.webm' 
     type="video/webm"
@@ -331,21 +331,15 @@ const location = useLocation();
         {/* Add Card 3 similarly */}
       </div>
     </div>
-      
-      <div>
-        
-      <section className="py-24 relative -mb-[30%] lg:-mb-[15%] xl:mr-0 lg:mr-5 mr-0">
-        <div className="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
-            <div className="w-full justify-start items-center xl:gap-12 gap-10 grid lg:grid-cols-2 grid-cols-1">
-                <div className="w-full flex-col justify-center lg:items-start items-center gap-10 inline-flex">
-                    <div className="w-full flex-col justify-center items-start gap-8 flex">
-                        <div className="flex-col justify-start lg:items-start items-center gap-4 flex">
-                            <h1 className="text-black text-3xl font-bold leading-relaxed">Why Le Rose Real Estate</h1>
-                            <div className="w-full flex-col justify-start lg:items-start items-center gap-3 flex">
-            <h5 className="text-gray-800 text-xl font-bold font-manrope leading-normal lg:text-start text-center">
+     
+     <div className=' grid grid-cols-2'>
+      <div className=' col-span-1 max-sm:col-span-2'>
+      <div className=' flex flex-col gap-4 p-8'>
+      <h1 className="text-black text-3xl font-bold leading-relaxed">Why Le Rose Real Estate</h1>
+         <h5 className="text-gray-800 text-xl font-bold font-manrope leading-normal lg:text-start text-center">
                 Explore expert real estate services with personalized care tailored to your needs.
-            </h5>
-            <p className="text-gray-800 text-base font-normal leading-relaxed lg:text-start text-center">
+          </h5>
+           <p className="text-gray-800 text-base font-normal leading-relaxed lg:text-start text-center">
                 Welcome to Le Rose Real Estate, your premier real estate partner in Dubai. Founded and
                 operated by a dedicated team of Australians, we specialize in both off-plan and ready-to-move-in
                 properties, ensuring our clients find the perfect home or investment opportunity.
@@ -361,16 +355,8 @@ const location = useLocation();
                         honest relationships with our clients, ensuring they are informed and empowered at every stage of their real estate journey.
                     </>
                 )}
-            </p>
-            <button
-                className="text-white text-sm mt-2 hover:underline"
-            >
-            </button>
-        </div>
-                        </div>
-                       
-                    </div>
-                    <button
+            </p> 
+                                <button
                         className="sm:w-fit w-full group px-3.5 py-2 bg-black text-white rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] transition-all duration-700 ease-in-out justify-center items-center flex" 
                         onClick={() => setShowMore(!showMore)}>
                 
@@ -385,19 +371,15 @@ const location = useLocation();
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </button>
-                </div>
-                <div className="w-full lg:justify-start justify-center items-start flex">
-                    <div
-                        className="sm:w-[564px] w-full sm:h-[646px] h-full sm:bg-gray-100 rounded-3xl sm:border border-gray-200 relative">
-                        <img className="sm:mt-5 sm:ml-5 w-full h-full rounded-3xl object-cover"
-                            src="/AboutUs2.jpeg" alt="loading..." />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-                                            
       </div>
+      </div>
+      <div className=' col-span-1 max-sm:col-span-2'>
+
+          <img className="sm:mt-5 sm:ml-5 w-full h-[500px] rounded-3xl object-cover"
+                            src="/AboutUs2.jpeg" alt="loading..." />
+      </div>
+     </div>
+
 
 
     </div>

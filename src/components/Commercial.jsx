@@ -74,7 +74,7 @@ function Commercial() {
   return (
     <div>
       {/* Hero Section */}
-      <div className="relative h-[70vh] w-full lg:h-[70vh] sm:h-[100vh]">
+      <div className="relative w-full h-full relative">
         <video
           loop
           autoPlay
