@@ -2,8 +2,12 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import API from "../api/BaseApi";
+import { useState } from "react";
 
 const PropertyForm = () => {
+  const [success, setSuccess]=useState("")
+  const [error, setError]=useState("")
+
   // Formik setup
   const formik = useFormik({
     initialValues: {
@@ -32,15 +36,16 @@ const PropertyForm = () => {
       try {
         const response = await API.post("/api/contact-user", values);
 
-        if (response.status >= 200 && response.status < 300) {
-          alert("User data submitted successfully!");
-          resetForm();
-        } else {
-          alert("Failed to submit user data.");
-        }
+       if (response.status && response.status>=200 && response.status<300) {
+        setSuccess("User data submitted successfully!");
+       resetForm()
+      } else {
+        setError("Failed to submit user data.");
+        setSuccess("");
+      }
       } catch (error) {
-        console.error("Error submitting form:", error);
-        alert("Something went wrong.");
+        console.error("Error submitting form:", error); 
+        setError("Failed to submit user data.");
       } finally {
         setSubmitting(false);
       }
@@ -198,6 +203,10 @@ const PropertyForm = () => {
             >
               Submit Listing
             </button>
+            {success !=="" && <p className={`text-xs text-green-500`}>{success}</p>}
+            {error !=="" && <p className={`text-xs text-red-500`}>{error}</p>}
+
+            
           </form>
         </div>
       </div>
