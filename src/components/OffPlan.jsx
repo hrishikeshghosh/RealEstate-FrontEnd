@@ -76,6 +76,7 @@ function HomePage() {
         <video
           loop
           autoPlay
+          playsInline
           muted
           className="relative z-0 w-full h-[70vh] sm:h-full object-cover object-center"
           src="/excel-properties-dubai.webm"

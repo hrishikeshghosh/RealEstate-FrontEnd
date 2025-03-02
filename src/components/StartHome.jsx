@@ -137,6 +137,7 @@ const location = useLocation();
   <video
     loop
     autoPlay
+    playsInline
     muted
     className="relative z-0 w-full h-[70vh] sm:h-full object-cover object-center"
     // src="/src/assets/excel-properties-dubai.webm"
@@ -390,9 +391,9 @@ const location = useLocation();
 
     </div>
   </div>
-  <div className="max-w-7xl mx-auto p-6 mt-[5vw]">
+  <div className="max-w-7xl mx-auto p-2 ">
     
-<div className="text-gray-700 text-lg font-medium mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+{/* <div className="text-gray-700 text-lg font-medium mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
   <div>
   <div className="w-full relative">
 <p className="text-lg text-gray-800 font-semibold font-manrope">
@@ -410,7 +411,7 @@ const location = useLocation();
   >
     More properties
   </Link>
-</div>
+</div> */}
 
     {/* <!-- Property Listings Grid --> */}
     <div className="container mx-auto px-4 py-8">

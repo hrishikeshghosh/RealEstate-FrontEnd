@@ -31,12 +31,26 @@ import SearchOffPlan from './components/SearchOffPlan';
 import Demo from './components/Demo';
 import TermsConditions from './components/Terms & Conditions';
 import ScrollToTop from './components/ScrollToTop';
-
+import { Icon } from "@iconify/react";
 
 
 const App = () => {
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <Helmet>
+            <title>Real Estate Dubai - Your Dream Properties- Home</title>
+            <meta name="description" content="Explore top properties in Dubai with expert guidance." />
+            <meta name="keywords" content="Real Estate, Dubai, Properties, Rent, Buy" />
+            <meta name="author" content="Leroserealestate" />
+            <link rel="canonical" href="https://www.leroserealestate.ae/" />
+        </Helmet>
+    <div className=' fixed bottom-0 right-0 w-fit p-5 z-50 cursor-pointer' onClick={(e)=>{
+      e.preventDefault()
+      window.open('https://wa.me/971589896002')
+    }}>
+    <Icon icon={`logos:whatsapp-icon`} className=' text-5xl'/>
+    </div>
+
    <Helmet>
         <title>Real Estate Dubai - Your Dream Properties - Home</title>
         <meta
