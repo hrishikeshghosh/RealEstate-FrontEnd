@@ -149,6 +149,7 @@ const location = useLocation();
   <video
     loop
     autoPlay
+    playsInline
     muted
     className="relative z-0 w-full h-full  object-cover object-center"
     // src="/src/assets/excel-properties-dubai.webm"
