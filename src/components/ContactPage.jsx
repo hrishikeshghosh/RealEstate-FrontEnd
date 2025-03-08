@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import API from "../api/BaseApi";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css"; // CSS for styling
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: "",
-    contactNumber: "",
+    contactNumber: "", // Full number with country code (e.g., +917000654043)
     email: "",
     message: "",
   });
@@ -14,6 +16,7 @@ const ContactPage = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const location = useLocation();
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -25,6 +28,19 @@ const ContactPage = () => {
     }
   };
 
+  const handlePhoneChange = (value) => {
+    console.log("Raw Phone value:", value); // Debug: Check raw value
+    // Ensure value starts with '+'
+    const formattedValue = value.startsWith("+") ? value : `+${value}`;
+    setFormData({ ...formData, contactNumber: formattedValue });
+
+    // Clear error if valid
+    const newErrors = validateForm();
+    if (!newErrors.contactNumber) {
+      setErrors({ ...errors, contactNumber: "" });
+    }
+  };
+
   const validateForm = () => {
     const newErrors = {};
 
@@ -32,8 +48,10 @@ const ContactPage = () => {
       newErrors.name = "Name must be at least 3 characters long.";
     }
 
-    if (!formData.contactNumber || !/^\d{10}$/.test(formData.contactNumber)) {
-      newErrors.contactNumber = "Mobile number must be a valid 10-digit number.";
+    if (!formData.contactNumber) {
+      newErrors.contactNumber = "Phone number is required.";
+    } else if (!/^\+\d{9,15}$/.test(formData.contactNumber)) {
+      newErrors.contactNumber = "Mobile number must start with '+' followed by 9-15 digits (e.g., +917000654043).";
     }
 
     if (!formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
@@ -60,13 +78,13 @@ const ContactPage = () => {
 
     try {
       const response = await API.post("/api/contact-user", {
-        name:formData?.name,
-        email:formData?.email,
-        contactNumber:formData?.contactNumber,
-        message:formData?.message
+        name: formData.name,
+        email: formData.email,
+        contactNumber: formData.contactNumber, // Full number with country code
+        message: formData.message,
       });
 
-      if (response.status &&  response.status >= 200 && response.status < 300){
+      if (response.status && response.status >= 200 && response.status < 300) {
         setSuccess("User data submitted successfully!");
         setError("");
         setFormData({ name: "", contactNumber: "", email: "", message: "" });
@@ -80,10 +98,11 @@ const ContactPage = () => {
       setError("Something went wrong.");
     }
   };
+
   useEffect(() => {
-    // Page ke top par scroll karne ke liye
     window.scrollTo(0, 0);
   }, [location.pathname]);
+
   return (
     <div>
       <div className="flex flex-col mt-[20vw] lg:flex-row w-full h-auto lg:mt-[5vw]">
@@ -93,22 +112,24 @@ const ContactPage = () => {
             backgroundImage: "url('/ContactImg.jpeg')",
           }}
         >
-          <img
-            className="w-32 lg:w-25 p-4"
-            src="/logo-01.png"
-            alt="Logo"
-          />
+          <img className="w-32 lg:w-25 p-4" src="/logo-01.png" alt="Logo" />
         </div>
 
         <div className="lg:w-3/5 p-6 lg:p-12 bg-white text-gray-800">
-          <h1 className="text-2xl lg:text-4xl font-light uppercase tracking-wide mb-4">Contact Us</h1>
+          <h1 className="text-2xl lg:text-4xl font-light uppercase tracking-wide mb-4">
+            Contact Us
+          </h1>
           <p className="text-sm lg:text-base mb-6">
-          At Lerose Real Estate, we’re here to help you find your dream property. Whether you’re looking to buy, sell, or invest, our team of experts is ready to assist you every step of the way.
+            At Lerose Real Estate, we’re here to help you find your dream property. Whether you’re
+            looking to buy, sell, or invest, our team of experts is ready to assist you every step
+            of the way.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm uppercase mb-2">Full Name</label>
+              <label htmlFor="name" className="block text-sm uppercase mb-2">
+                Full Name
+              </label>
               <input
                 type="text"
                 id="name"
@@ -122,7 +143,9 @@ const ContactPage = () => {
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm uppercase mb-2">Email Address</label>
+              <label htmlFor="email" className="block text-sm uppercase mb-2">
+                Email Address
+              </label>
               <input
                 type="email"
                 id="email"
@@ -136,21 +159,41 @@ const ContactPage = () => {
             </div>
 
             <div>
-              <label htmlFor="contactNumber" className="block text-sm uppercase mb-2">Phone Number</label>
-              <input
-                type="text"
-                id="contactNumber"
-                name="contactNumber"
+              <label htmlFor="contactNumber" className="block text-sm uppercase mb-2">
+                Phone Number
+              </label>
+              <PhoneInput
+                country={"ae"} // Default country (UAE)
                 value={formData.contactNumber}
-                onChange={handleChange}
-                placeholder="Your Phone Number"
-                className="w-full p-2 border-b-2 border-gray-300 bg-transparent outline-none focus:border-gray-500"
+                onChange={handlePhoneChange}
+                inputProps={{
+                  name: "contactNumber",
+                  id: "contactNumber",
+                  className:
+                    "w-full p-2 pl-12 border-b-2 border-gray-300 bg-transparent outline-none focus:border-gray-500",
+                }}
+                buttonStyle={{
+                  background: "transparent",
+                  border: "none",
+                  borderBottom: "2px solid #d1d5db", // Match your border style
+                }}
+                dropdownStyle={{
+                  borderRadius: "0",
+                  border: "1px solid #d1d5db",
+                }}
+                specialLabel={false} // Removes extra label
+                enableSearch={true} // Allows searching in dropdown
+                countryCodeEditable={false} // Prevents manual editing of country code
               />
-              {errors.contactNumber && <p className="text-red-500 text-sm">{errors.contactNumber}</p>}
+              {errors.contactNumber && (
+                <p className="text-red-500 text-sm">{errors.contactNumber}</p>
+              )}
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm uppercase mb-2">Message</label>
+              <label htmlFor="message" className="block text-sm uppercase mb-2">
+                Message
+              </label>
               <textarea
                 id="message"
                 name="message"
