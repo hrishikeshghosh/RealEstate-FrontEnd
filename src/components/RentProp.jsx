@@ -4,7 +4,9 @@ import { useLocation } from "react-router-dom";
 import API from "../api/BaseApi";
 
 function RentProp() {
-  const [rentProperties, setrentProperties] = useState([]); // rent properties state
+  // const [RentalProperties, setRentalProperties] = useState([]); // rent properties state
+  const [RentalProperties, setRentalProperties] = useState([]);
+   // rent properties state
   const [loading, setLoading] = useState(true); // Loading state
   const [selectedType, setSelectedType] = useState("All"); // Selected type filter
   const [searchInput, setSearchInput] = useState(""); // Search bar input
@@ -14,31 +16,24 @@ function RentProp() {
   const location = useLocation();
   // Fetch rent Properties
   useEffect(() => {
-    const fetchRentProperties = async () => {
-      setLoading(true); // Start loading
+    const fetchRentalProperties = async () => {
+      setLoading(true);
       try {
-        const response = await API.get("/api/properties/rent"); // API endpoint
-        if (
-          !response.status ||
-          response.status < 200 ||
-          response.status >= 300
-          
-        ) {
-          throw new Error("Failed to fetch rent properties");
+        const response = await API.get("/api/properties/rent");
+         if (!response.status || response.status < 200 || response.status >= 300)  {
+          throw new Error("Failed to fetch Rental properties");
         }
-        // console.log(response);
         const data = response;
-        setrentProperties(data?.data); // Update rentProperties state
+        setRentalProperties(data?.data);
       } catch (error) {
-        console.error("Error fetching rent properties:", error);
+        console.error("Error fetching Rental properties:", error);
       } finally {
-        setLoading(false); // Stop loading
+        setLoading(false);
       }
     };
-// console.log(fetchRentProperties())
-    fetchRentProperties();
-  }, []); // Runs only on component mount
 
+    fetchRentalProperties();
+  }, []);
   const handleSearch = () => {
     const queryParams = new URLSearchParams();
 
@@ -56,8 +51,8 @@ function RentProp() {
 
   // Calculate dynamic counts of each property type
   const propertyCounts =
-    rentProperties?.length > 0
-      ? rentProperties.reduce((acc, property) => {
+    RentalProperties?.length > 0
+      ? RentalProperties.reduce((acc, property) => {
           acc[property.subCategory] = (acc[property.subCategory] || 0) + 1;
           return acc;
         }, {})
@@ -69,13 +64,13 @@ function RentProp() {
   );
 
   // Add "All Properties" to the beginning of the filters
-  propertyFilters.unshift(["All", rentProperties.length]);
+  propertyFilters.unshift(["All", RentalProperties.length]);
 
   // Filter properties based on selected type
   const filteredProperties =
     selectedType === "All"
-      ? rentProperties
-      : rentProperties.filter(
+      ? RentalProperties
+      : RentalProperties.filter(
           (property) => property.subCategory === selectedType
         );
 
@@ -106,7 +101,7 @@ function RentProp() {
             <h4>
               {loading
                 ? "Loading..."
-                : `${rentProperties.length} properties available`}
+                : `${RentalProperties.length} properties available`}
             </h4>
           </div>
           <div className="search-container w-[100vw] mt-[10vh] h-[25vh] backdrop-blur-sm bg-white/20 rounded-lg lg:w-[90%] lg:max-w-[900px] mx-auto shadow-md z-10 sm:w-[60%] sm:h-[auto] p-1 lg:p-6">
@@ -126,9 +121,9 @@ function RentProp() {
               </Link>
               <Link
                 className="tab-btn bg-transparent border border-gray-300 py-2 px-2 sm:px-5 text-sm sm:text-base rounded cursor-pointer text-white transition-all hover:bg-gray-200 active:bg-black active:text-white"
-                to="/commercial"
+                to="/Rental"
               >
-                Commercial
+                Rental
               </Link>
               <Link
                 className="tab-btn bg-transparent border border-gray-300 py-2 px-2 sm:px-5 text-sm sm:text-base rounded cursor-pointer text-white transition-all hover:bg-gray-200 active:bg-black active:text-white"
