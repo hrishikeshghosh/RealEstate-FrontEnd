@@ -32,6 +32,7 @@ import Demo from './components/Demo';
 import TermsConditions from './components/Terms & Conditions';
 import ScrollToTop from './components/ScrollToTop';
 import { Icon } from "@iconify/react";
+import RentProp from './components/RentProp';
 
 
 const App = () => {
@@ -75,6 +76,9 @@ const App = () => {
           <Route path="/" element={<StartHome />} />
           <Route path="/residential-properties" element={<HomePage />} />
           <Route path="/buy-property" element={<HomePage />} />
+          <Route path='/rent-property' element={<RentProp />} />
+          <Route path='/rent-properties' element={<RentProp />} />
+          <Route path='/Properties-For-Rent-in-Dubai' element={<RentProp />} />
           <Route path="/pro" element={<PropertyForm />} />
           <Route path="/off-plan" element={<OffPlan />} />
           <Route path="/commercial" element={<Commercial />} />

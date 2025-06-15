@@ -10,6 +10,7 @@ const StartHome = ({ id, title, description, image }) => {
   const [properties, setProperties] = useState([]);
   const [offPlanProperties, setOffPlanProperties] = useState([]);
   const [commercialProperties, setCommercialProperties] = useState([]);
+  const [RentalProperties, setRentalProperties] = useState([]);
   const [residentialProperties, setResidentialProperties] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [propertyType, setPropertyType] = useState("");
@@ -41,6 +42,10 @@ const location = useLocation();
         .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)) // Sort by creation date (newest first)
         .slice(0, 3); // Limit to the newest three properties
         setResidentialProperties(residentialData);
+        const rentalData = data.filter((property) => property.mainCategory === "Rental")
+        .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)) // Sort by creation date (newest first)
+        .slice(0, 3); // Limit to the newest three properties
+        setRentalProperties(rentalData);
       })
       .catch((error) => {
         console.error("Error fetching properties:", error);
@@ -155,10 +160,17 @@ const location = useLocation();
     <div className="search-container mt-[10vh] h-[20vh] w-[100vw] backdrop-blur-sm bg-white/20 rounded-lg lg:w-[90%] lg:max-w-[900px] mx-auto shadow-md z-10 sm:w-[60%] sm:h-[auto] p-1 lg:p-6">
       
       {/* <!-- Tabs --> */}
-      <div className="tabs space-x-3 mt-5 lg:space-x-3 sm:justify-start gap-3 sm:gap-5 mb-5">
+      <div className="tabs space-x-1 mt-5 lg:space-x-3 sm:justify-start gap-3 sm:gap-5 mb-5">
         
         <Link
-          className="tab-btn text-white bg-transparent border border-gray-300 py-2 px-3 sm:px-3 text-sm sm:text-base rounded cursor-pointer transition-all hover:bg-gray-200 active:bg-black active:text-white"
+          className="tab-btn text-white bg-transparent border border-gray-300 py-2 px-2 sm:px-3 text-sm sm:text-base rounded cursor-pointer transition-all hover:bg-gray-200 active:bg-black active:text-white"
+             to="/rent-properties" 
+         
+        >
+          Rent
+        </Link>
+        <Link
+          className="tab-btn text-white bg-transparent border border-gray-300 py-2 px-2 sm:px-3 text-sm sm:text-base rounded cursor-pointer transition-all hover:bg-gray-200 active:bg-black active:text-white"
              to="/residential-properties" 
          
         >
@@ -167,7 +179,7 @@ const location = useLocation();
 
       
         <Link
-          className="tab-btn bg-transparent border border-gray-300 py-2 px-4 sm:px-5 text-sm sm:text-base rounded cursor-pointer text-white transition-all hover:bg-gray-200 active:bg-black active:text-white"
+          className="tab-btn bg-transparent border border-gray-300 py-2 px-2 sm:px-5 text-sm sm:text-base rounded cursor-pointer text-white transition-all hover:bg-gray-200 active:bg-black active:text-white"
           to="/commercial"
         >
           Commercial
@@ -654,6 +666,98 @@ const location = useLocation();
               <div className="flex justify-between items-center">
                 <span className="text-sm font-bold text-gray-500">For Sale</span>
                 <span className="text-lg font-bold text-teal-500">{property.price}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+    </div>
+   
+  </div>
+
+  {/* Rental Properties */}
+  <div className="max-w-7xl mx-auto p-6 mt-[5vw]">
+    {/* <!-- Header --> */}
+
+<div className="text-gray-700 text-lg font-medium mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+  <div>
+  <div className="w-full relative">
+<p className="text-lg text-gray-800 font-semibold font-manrope">
+<span className="bg-black bg-no-repeat bg-bottom p-1 text-white">Properties</span> For Rent in Dubai
+</p>
+</div>
+      <span className="text-sm text-zinc-700 font-thin">
+        Enjoy our carefully curated selection of rental properties as we walk you around them.
+      </span>
+    
+  </div>
+  <Link
+    className="lg:border-2 text-zinc-100 bg-zinc-800 lg:p-2 lg:text-lg rounded border border-gray-400 px-4 py-2 sm:px-3 sm:py-1 sm:text-sm hover:bg-gray-200 hover:text-zinc-800"
+    to="/Properties-For-Rent-in-Dubai"
+  >
+    More properties
+  </Link>
+</div>
+
+    {/* <!-- Property Listings Grid --> */}
+    <div className="container mx-auto px-4 py-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {RentalProperties.map((property) => (
+          <div
+            key={property.id}
+            className="bg-white shadow-md rounded-lg overflow-hidden relative group"
+          >
+            {property.featured && (
+              <span className="absolute top-2 left-2 bg-orange-500 text-white text-xs font-bold py-1 px-3 rounded-full z-10">
+                Featured
+              </span>
+            )}
+            <div className="relative">
+              <img
+                src={property.Images[0]}
+                alt={property.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="absolute inset-0 bg-teal-600 opacity-0 group-hover:opacity-50 transition duration-300"></div>
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                <Link
+                  to={`/property/${property.id}`}
+                  state={{ property }}
+                  className="mt-4 inline-block bg-teal-500 text-white px-4 py-2 rounded text-sm"
+                >
+                  View Property
+                </Link>
+              </div>
+            </div>
+            <div className="p-4">
+              <h3 className="text-lg font-semibold mb-2">{property.title}</h3>
+              <div className="flex justify-between text-sm text-gray-800 mb-4">
+                <div>
+                  <span className="block font-semibold">Location</span>
+                  <div className="flex items-center">
+                    <i className="ri-map-pin-5-fill text-red-600 mr-2"></i>
+                    {property.location}
+                  </div>
+                </div>
+                <div>
+                  <span className="block font-semibold">Bedrooms</span>
+                  <div className="flex items-center">
+                    <i className="fas fa-th-large text-gray-500 mr-2"></i>
+                    {property.bedrooms}
+                  </div>
+                </div>
+                <div>
+                  <span className="block font-semibold">Area</span>
+                  <div className="flex items-center">
+                    <i className="fas fa-vector-square text-gray-500 mr-2"></i>
+                    {property.area}
+                  </div>
+                </div>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-sm font-bold text-gray-500">For Rent</span>
+                <span className="text-lg font-bold text-teal-500">{property.price}/year</span>
               </div>
             </div>
           </div>

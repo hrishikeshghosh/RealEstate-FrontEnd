@@ -46,6 +46,9 @@ const NavBar = () => {
               <Link to="/buy-property" className=" hover:text-gray-600 transition hover:scale-105">
                 Buy
               </Link>
+              <Link to="/rent-property" className=" hover:text-gray-600 transition hover:scale-105">
+                Rent
+              </Link>
               <Link to="/off-plan" className="hover:text-gray-600 transition hover:scale-105">
                 Off Plan
               </Link>
@@ -107,6 +110,9 @@ className="absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-20
             <ul className="flex flex-col gap-4 p-4 text-sm text-gray-700">
               <Link to="/buy-property"  onClick={handleSelectChange} className="hover:text-gray-900 transition">
                 Buy
+              </Link>
+              <Link to="/rent-property"  onClick={handleSelectChange} className="hover:text-gray-900 transition">
+                Rent
               </Link>
               <Link to="/off-plan" onClick={handleSelectChange} className="hover:text-gray-900 transition">
                 Off Plan

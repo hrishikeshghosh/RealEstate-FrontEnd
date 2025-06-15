@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import API from "../api/BaseApi";
@@ -93,8 +93,14 @@ function Commercial() {
             <h4>{loading ? "Loading..." : `${commercialProperties.length} properties available`}</h4>
 
             {/* Search Bar */}
-            <div className="search-container mt-5 lg:mt-10 bg-white/30 backdrop-blur-md rounded-lg p-4 w-[100%] max-w-[800px] mx-auto shadow-md">
-            <div className="tabs space-x-3 lg:space-x-3 sm:justify-start gap-3 sm:gap-5 mb-5">
+            <div className="search-container mt-5 lg:mt-10 bg-white/30 backdrop-blur-md rounded-lg py-5 w-[100%] max-w-[800px] mx-auto shadow-md">
+            <div className="tabs space-x-1 lg:space-x-3 sm:justify-start gap-3 sm:gap-5 mb-5">
+                        <Link
+                          className="tab-btn text-white bg-transparent border border-gray-300 py-2 px-2 sm:px-3 text-sm sm:text-base rounded cursor-pointer transition-all hover:bg-gray-200 active:bg-black active:text-white"
+                          to="/rent-properties"
+                        >
+                          Rent
+                        </Link>
                         <Link
                           className="tab-btn text-white bg-transparent border border-gray-300 py-2 px-2 sm:px-3 text-sm sm:text-base rounded cursor-pointer transition-all hover:bg-gray-200 active:bg-black active:text-white"
                           to="/residential-properties"
@@ -116,14 +122,14 @@ function Commercial() {
                       </div>
               <div className="flex flex-wrap gap-3 items-center justify-center">
                 <input
-                  className="w-full lg:w-1/3 px-4 py-2 border rounded bg-transparent text-white"
+                  className="w-[46%] lg:w-1/3 px-4 py-2 border rounded bg-transparent text-white"
                   type="text"
                   placeholder="Search Commercial Properties"
                   value={searchInput}
                   onChange={(e) => setSearchInput(e.target.value)}
                 />
                 <select
-                  className="w-full lg:w-1/4 px-4 py-2 border rounded bg-transparent text-white"
+                  className="w-[46%] lg:w-1/4 px-4 py-2 border rounded bg-transparent text-white"
                   value={propertyType}
                   onChange={(e) => setPropertyType(e.target.value)}
                 >
@@ -132,7 +138,7 @@ function Commercial() {
                   <option className="text-zinc-800" value="Studio">Studio</option>
                 </select>
                 <select
-                  className="w-full lg:w-1/4 px-4 py-2 border rounded bg-transparent text-white"
+                  className="w-[46%] lg:w-1/4 px-4 py-2 border rounded bg-transparent text-white"
                   value={areaType}
                   onChange={(e) => setAreaType(e.target.value)}
                 >
@@ -144,7 +150,7 @@ function Commercial() {
                   <option className="text-zinc-800" value={3000}>3000</option>
                 </select>
                 <button
-                  className="w-full lg:w-1/4 px-4 py-2 bg-black text-white rounded hover:bg-zinc-800"
+                  className="w-[46%] lg:w-1/4 px-3 py-2 bg-black text-white rounded hover:bg-zinc-800"
                   onClick={handleSearch}
                 >
                   Search

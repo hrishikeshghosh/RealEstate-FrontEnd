@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link,useNavigate} from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import API from "../api/BaseApi";
@@ -99,21 +99,27 @@ function HomePage() {
           </div> 
           <div className="search-container w-[100vw] mt-[10vh] h-[25vh] backdrop-blur-sm bg-white/20 rounded-lg lg:w-[90%] lg:max-w-[900px] mx-auto shadow-md z-10 sm:w-[60%] sm:h-[auto] p-1 lg:p-6">
           {/* Tabs */}
-          <div className="tabs space-x-2 lg:space-x-3 sm:justify-start gap-3 sm:gap-5 mb-5">
+          <div className="tabs space-x-1 lg:space-x-3 sm:justify-start gap-3 sm:gap-5 mb-5">
             <Link
-              className="tab-btn text-white bg-transparent border border-gray-300 py-2 px-3 sm:px-3 text-sm sm:text-base rounded cursor-pointer transition-all hover:bg-gray-200 active:bg-black active:text-white"
+              className="tab-btn text-white bg-transparent border border-gray-300 py-2 px-2 sm:px-3 text-sm sm:text-base rounded cursor-pointer transition-all hover:bg-gray-200 active:bg-black active:text-white"
+              to="/rent-properties"
+            >
+              Rent
+            </Link>
+            <Link
+              className="tab-btn text-white bg-transparent border border-gray-300 py-2 px-2 sm:px-3 text-sm sm:text-base rounded cursor-pointer transition-all hover:bg-gray-200 active:bg-black active:text-white"
               to="/residential-properties"
             >
               Residential
             </Link>
             <Link
-              className="tab-btn bg-transparent border border-gray-300 py-2 px-4 sm:px-5 text-sm sm:text-base rounded cursor-pointer text-white transition-all hover:bg-gray-200 active:bg-black active:text-white"
+              className="tab-btn bg-transparent border border-gray-300 py-2 px-2 sm:px-5 text-sm sm:text-base rounded cursor-pointer text-white transition-all hover:bg-gray-200 active:bg-black active:text-white"
               to="/commercial"
             >
               Commercial
             </Link>
             <Link
-              className="tab-btn bg-transparent border border-gray-300 py-2 px-4 sm:px-5 text-sm sm:text-base rounded cursor-pointer text-white transition-all hover:bg-gray-200 active:bg-black active:text-white"
+              className="tab-btn bg-transparent border border-gray-300 py-2 px-2 sm:px-5 text-sm sm:text-base rounded cursor-pointer text-white transition-all hover:bg-gray-200 active:bg-black active:text-white"
               to="/off-plan"
             >
               Off Plan
@@ -127,7 +133,7 @@ function HomePage() {
 
             {/* Keyword Search */}
             <input
-              className="srch py-2.5 w-[45vw] lg:text-center sm:w-[40%] p-2 border bg-transparent border-gray-300 rounded text-sm sm:text-base"
+              className="srch py-2.5 w-[46vw] lg:text-center sm:w-[40%] p-2 border bg-transparent border-gray-300 rounded text-sm sm:text-base"
               type="text"
               placeholder="Search Residential Properties"
               value={searchInput}
@@ -135,7 +141,7 @@ function HomePage() {
             />
 
             {/* Property Type Dropdown */}
-            <select className="dropdown w-[45vw] bg-transparent sm:w-[20%] border p-2 rounded"
+            <select className="dropdown w-[46vw] bg-transparent sm:w-[20%] border p-2 rounded"
              value={propertyType}
              onChange={(e) => setPropertyType(e.target.value)}
              >
@@ -145,7 +151,7 @@ function HomePage() {
             </select>
 
             {/* Bedroom Dropdown */}
-            <select className="dropdown w-[45vw] bg-transparent sm:w-[20%] border p-2 rounded"
+            <select className="dropdown w-[46vw] bg-transparent sm:w-[20%] border p-2 rounded"
              value={bedroomType}
              onChange={(e) => setBedroomType(e.target.value)}
             >
@@ -161,7 +167,7 @@ function HomePage() {
             </select>
 
             {/* Area Dropdown */}
-            <select className="dropdown w-[45vw] bg-transparent sm:w-[15%] border p-2 rounded">
+            <select className="dropdown w-[46vw] bg-transparent sm:w-[15%] border p-2 rounded">
               <option>Area</option>
             </select>
 

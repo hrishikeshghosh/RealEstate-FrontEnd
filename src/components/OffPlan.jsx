@@ -91,24 +91,30 @@ function HomePage() {
           </div> 
           <div className="search-container w-[100vw] mt-[10vh] h-[25vh] backdrop-blur-sm bg-white/20 rounded-lg lg:w-[90%] lg:max-w-[900px] mx-auto shadow-md z-10 sm:w-[60%] sm:h-[auto] p-1 lg:p-6">
           {/* Tabs */}
-          <div className="tabs space-x-2 lg:space-x-3 sm:justify-start gap-3 sm:gap-5 mb-5">
+          <div className="tabs space-x-1 lg:space-x-3 sm:justify-start gap-3 sm:gap-5 mb-5">
             <Link
-              className="tab-btn text-white bg-transparent border border-gray-300 py-2 px-3 sm:px-3 text-sm sm:text-base rounded cursor-pointer transition-all hover:bg-gray-200 active:bg-black active:text-white"
+              className="tab-btn text-white bg-transparent border border-gray-300 py-2 px-2 sm:px-3 text-sm sm:text-base rounded cursor-pointer transition-all hover:bg-gray-200 active:bg-black active:text-white"
+              to="/rent-properties"
+            >
+              Rent
+            </Link>
+            <Link
+              className="tab-btn text-white bg-transparent border border-gray-300 py-2 px-2 sm:px-3 text-sm sm:text-base rounded cursor-pointer transition-all hover:bg-gray-200 active:bg-black active:text-white"
               to="/residential-properties"
             >
               Residential
             </Link>
             <Link
-              className="tab-btn bg-transparent border border-gray-300 py-2 px-4 sm:px-5 text-sm sm:text-base rounded cursor-pointer text-white transition-all hover:bg-gray-200 active:bg-black active:text-white"
-              to="/off-plan"
-            >
-              Off Plan
-            </Link>
-            <Link
-              className="tab-btn bg-transparent border border-gray-300 py-2 px-4 sm:px-5 text-sm sm:text-base rounded cursor-pointer text-white transition-all hover:bg-gray-200 active:bg-black active:text-white"
+              className="tab-btn bg-transparent border border-gray-300 py-2 px-2 sm:px-5 text-sm sm:text-base rounded cursor-pointer text-white transition-all hover:bg-gray-200 active:bg-black active:text-white"
               to="/commercial"
             >
               Commercial
+            </Link>
+            <Link
+              className="tab-btn bg-transparent border border-gray-300 py-2 px-2 sm:px-5 text-sm sm:text-base rounded cursor-pointer text-white transition-all hover:bg-gray-200 active:bg-black active:text-white"
+              to="/off-plan"
+            >
+              Off Plan
             </Link>
           </div>
 

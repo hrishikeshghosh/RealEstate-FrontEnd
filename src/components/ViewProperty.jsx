@@ -307,7 +307,7 @@ const ViewProperty = () => {
             <img
               src={slides[activeIndex]}
               alt={`Slide ${activeIndex + 1}`}
-              className="w-full h-full lg:object-contain hover:scale-105 transition-transform duration-300"
+              className="w-full h-full lg:object-cover lg:object-center hover:scale-105 transition-transform duration-300"
             />
           </div>
 
