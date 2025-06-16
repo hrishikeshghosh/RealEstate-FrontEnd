@@ -757,7 +757,7 @@ const location = useLocation();
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-sm font-bold text-gray-500">For Rent</span>
-                <span className="text-lg font-bold text-teal-500">{property.price}/year</span>
+                <span className="text-lg font-bold text-teal-500">{property.price}</span>
               </div>
             </div>
           </div>
