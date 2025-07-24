@@ -322,7 +322,7 @@ function RentProp() {
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-sm font-bold text-gray-500">
-                        For Sale
+                        For Rent
                       </span>
                       <span className="text-lg font-bold text-teal-500">
                         {property.price || "Contact for price"}
