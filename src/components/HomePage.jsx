@@ -17,7 +17,7 @@ function HomePage() {
     const fetchResidentialProperties = async () => {
       setLoading(true); // Start loading
       try {
-        const response = await API.get("/api/properties/residential"); // API endpoint
+        const response = await API.get("/api/properties/category-residential/residential"); // API endpoint
          if (!response.status || response.status < 200 || response.status >= 300) {
           throw new Error("Failed to fetch residential properties");
         }

@@ -24,7 +24,8 @@ function Commercial() {
     const fetchCommercialProperties = async () => {
       setLoading(true);
       try {
-        const response = await API.get("/api/properties/commercial");
+        // const response = await API.get("/api/properties/commercial");
+        const response = await API.get("/api/properties/category-commercial/commercial");
          if (!response.status || response.status < 200 || response.status >= 300)  {
           throw new Error("Failed to fetch commercial properties");
         }

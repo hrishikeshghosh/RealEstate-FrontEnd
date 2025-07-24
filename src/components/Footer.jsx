@@ -47,6 +47,12 @@ const Footer = () => {
             <a href="https://wa.me/971589896002" className="">
               <i className="fab fa-whatsapp"></i>
             </a>
+            <a href="https://www.tiktok.com/@le.rose.real.esta?is_from_webapp=1&sender_device=pc" className="">
+              <i className="ri-tiktok-fill"></i>
+            </a>
+            <a href="https://youtube.com/@leroserealestate?si=RU7QlpW0MWhTlPT_" className="">
+             <i className="ri-youtube-line"></i>
+            </a>
           </div>
         </div>
       </div>

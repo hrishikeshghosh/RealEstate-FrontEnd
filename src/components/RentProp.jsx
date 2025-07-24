@@ -19,7 +19,7 @@ function RentProp() {
     const fetchRentalProperties = async () => {
       setLoading(true);
       try {
-        const response = await API.get("/api/properties/rent");
+        const response = await API.get("/api/properties/category-rent/rent");
          if (!response.status || response.status < 200 || response.status >= 300)  {
           throw new Error("Failed to fetch Rental properties");
         }

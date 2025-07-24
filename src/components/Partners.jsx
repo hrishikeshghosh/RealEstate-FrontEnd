@@ -25,7 +25,23 @@ const Partners = () => {
           <img src="/DEVELOPERS LOGO BLUE-07.png" alt="Partner Logo" className="h-10" />
           <img src="/DEVELOPERS LOGO BLUE-08.png" alt="Partner Logo" className="h-10" />
           <img src="/DEVELOPERS LOGO BLUE-09.png" alt="Partner Logo" className="h-10" />
-         
+         <img src="/logo10.jpeg" alt="" className="h-10"/>
+         <img src="/logo11.jpeg" alt="" className="h-10"/>
+         <img src="/logo12.jpeg" alt="" className="h-10"/>
+         <img src="/logo13.jpeg" alt="" className="h-10"/>
+         <img src="/logo14.jpeg" alt="" className="h-10"/>
+         <img src="/logo15.jpeg" alt="" className="h-10"/>
+         <img src="/logo16.jpeg" alt="" className="h-10"/>
+         <img src="/logo17.jpeg" alt="" className="h-10"/>
+         <img src="/logo18.jpeg" alt="" className="h-10"/>
+         <img src="/logo19.jpeg" alt="" className="h-10"/>
+         <img src="/logo20.jpeg" alt="" className="h-10"/>
+         <img src="/logo21.jpeg" alt="" className="h-10"/>
+         <img src="/logo22.jpeg" alt="" className="h-10"/>
+         <img src="/logo23.jpeg" alt="" className="h-10"/>
+         <img src="/logo24.jpeg" alt="" className="h-10"/>
+         <img src="/logo25.jpeg" alt="" className="h-10"/>
+         <img src="/logo26.jpeg" alt="" className="h-10"/>
           <img src="/DEVELOPERS LOGO BLUE-01.png" alt="Partner Logo" className="h-10" />
           <img src="/DEVELOPERS LOGO BLUE-02.png" alt="Partner Logo" className="h-10" />
           <img src="/DEVELOPERS LOGO BLUE-03.png" alt="Partner Logo" className="h-10" />
@@ -35,7 +51,23 @@ const Partners = () => {
           <img src="/DEVELOPERS LOGO BLUE-07.png" alt="Partner Logo" className="h-10" />
           <img src="/DEVELOPERS LOGO BLUE-08.png" alt="Partner Logo" className="h-10" />
           <img src="/DEVELOPERS LOGO BLUE-09.png" alt="Partner Logo" className="h-10" />
-         
+         <img src="/logo10.jpeg" alt="" className="h-10"/>
+         <img src="/logo11.jpeg" alt="" className="h-10"/>
+         <img src="/logo12.jpeg" alt="" className="h-10"/>
+         <img src="/logo13.jpeg" alt="" className="h-10"/>
+         <img src="/logo14.jpeg" alt="" className="h-10"/>
+         <img src="/logo15.jpeg" alt="" className="h-10"/>
+         <img src="/logo16.jpeg" alt="" className="h-10"/>
+         <img src="/logo17.jpeg" alt="" className="h-10"/>
+         <img src="/logo18.jpeg" alt="" className="h-10"/>
+         <img src="/logo19.jpeg" alt="" className="h-10"/>
+         <img src="/logo20.jpeg" alt="" className="h-10"/>
+         <img src="/logo21.jpeg" alt="" className="h-10"/>
+         <img src="/logo22.jpeg" alt="" className="h-10"/>
+         <img src="/logo23.jpeg" alt="" className="h-10"/>
+         <img src="/logo24.jpeg" alt="" className="h-10"/>
+         <img src="/logo25.jpeg" alt="" className="h-10"/>
+         <img src="/logo26.jpeg" alt="" className="h-10"/>
           <img src="/DEVELOPERS LOGO BLUE-01.png" alt="Partner Logo" className="h-10" />
           <img src="/DEVELOPERS LOGO BLUE-02.png" alt="Partner Logo" className="h-10" />
           <img src="/DEVELOPERS LOGO BLUE-03.png" alt="Partner Logo" className="h-10" />
@@ -45,6 +77,23 @@ const Partners = () => {
           <img src="/DEVELOPERS LOGO BLUE-07.png" alt="Partner Logo" className="h-10" />
           <img src="/DEVELOPERS LOGO BLUE-08.png" alt="Partner Logo" className="h-10" />
           <img src="/DEVELOPERS LOGO BLUE-09.png" alt="Partner Logo" className="h-10" />
+         <img src="/logo10.jpeg" alt="" className="h-10"/>
+         <img src="/logo11.jpeg" alt="" className="h-10"/>
+         <img src="/logo12.jpeg" alt="" className="h-10"/>
+         <img src="/logo13.jpeg" alt="" className="h-10"/>
+         <img src="/logo14.jpeg" alt="" className="h-10"/>
+         <img src="/logo15.jpeg" alt="" className="h-10"/>
+         <img src="/logo16.jpeg" alt="" className="h-10"/>
+         <img src="/logo17.jpeg" alt="" className="h-10"/>
+         <img src="/logo18.jpeg" alt="" className="h-10"/>
+         <img src="/logo19.jpeg" alt="" className="h-10"/>
+         <img src="/logo20.jpeg" alt="" className="h-10"/>
+         <img src="/logo21.jpeg" alt="" className="h-10"/>
+         <img src="/logo22.jpeg" alt="" className="h-10"/>
+         <img src="/logo23.jpeg" alt="" className="h-10"/>
+         <img src="/logo24.jpeg" alt="" className="h-10"/>
+         <img src="/logo25.jpeg" alt="" className="h-10"/>
+         <img src="/logo26.jpeg" alt="" className="h-10"/>
          
           </div>
       </div>

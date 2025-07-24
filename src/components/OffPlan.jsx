@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link,useNavigate } from "react-router-dom";
 import API from "../api/BaseApi";
 
@@ -18,7 +18,7 @@ function HomePage() {
     const fetchOffplanProperties = async () => {
       setLoading(true); // Start loading
       try {
-        const response = await API.get("/api/properties/off-plan"); // API endpoint
+        const response = await API.get("api/properties/category-offplan/off-plan"); // API endpoint
          if (!response.status || response.status < 200 || response.status >= 300){
           throw new Error("Failed to fetch offplan properties");
         }

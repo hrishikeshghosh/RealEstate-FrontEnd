@@ -24,6 +24,7 @@ const location = useLocation();
        if (!response.status || response.status < 200 || response.status >= 300)  {
           throw new Error("Failed to fetch properties");
         }
+        console.error()
        console.log(response.data); // Axios automatically parses JSON
       return response.data; // Return the data for further use
       })
@@ -613,7 +614,7 @@ const location = useLocation();
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {commercialProperties.map((property) => (
           <div
-            key={property.id}
+            key={property._id}
             className="bg-white shadow-md rounded-lg overflow-hidden relative group"
           >
             {property.featured && (
@@ -630,7 +631,7 @@ const location = useLocation();
               <div className="absolute inset-0 bg-teal-600 opacity-0 group-hover:opacity-50 transition duration-300"></div>
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                 <Link
-                  to={`/property/${property.id}`}
+                  to={`/property/${property._id}`}
                   state={{ property }}
                   className="mt-4 inline-block bg-teal-500 text-white px-4 py-2 rounded text-sm"
                 >
@@ -705,7 +706,7 @@ const location = useLocation();
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {RentalProperties.map((property) => (
           <div
-            key={property.id}
+            key={property._id}
             className="bg-white shadow-md rounded-lg overflow-hidden relative group"
           >
             {property.featured && (
@@ -722,7 +723,7 @@ const location = useLocation();
               <div className="absolute inset-0 bg-teal-600 opacity-0 group-hover:opacity-50 transition duration-300"></div>
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                 <Link
-                  to={`/property/${property.id}`}
+                  to={`/property/${property._id}`}
                   state={{ property }}
                   className="mt-4 inline-block bg-teal-500 text-white px-4 py-2 rounded text-sm"
                 >
