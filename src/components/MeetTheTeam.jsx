@@ -6,13 +6,13 @@ const MeetTheTeam = () => {
       id: 1,
       name: "Zahraa Hussein",
       role: "CEO / Agent Representative",
-      image: "https://images.unsplash.com/photo-1604904612715-47bf9d9bc670?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZmVtYWxlJTIwbW9kZWx8ZW58MHx8MHx8fDA%3D",
+      image: "/Zaira.jpeg",
     },
     {
       id: 2,
       name: "Ibrahim Al-Sadoon",
       role: "Business Development Manager",
-      image: "https://images.unsplash.com/photo-1453396450673-3fe83d2db2c4?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: "/Ibrahim.jpeg",
     },
     // {
     //   id: 3,
@@ -38,7 +38,7 @@ const MeetTheTeam = () => {
               <img
                 src={member.image}
                 alt={member.name}
-                className="w-32 h-32 mx-auto rounded-full mb-4 object-cover"
+                className="w-32 h-32 mx-auto rounded-full mb-4 object-cover object-top"
               />
               <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
               <p className="text-gray-700">{member.role}</p>
