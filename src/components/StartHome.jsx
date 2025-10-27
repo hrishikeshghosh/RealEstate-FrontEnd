@@ -24,12 +24,12 @@ const location = useLocation();
        if (!response.status || response.status < 200 || response.status >= 300)  {
           throw new Error("Failed to fetch properties");
         }
-        console.error()
-       console.log(response.data); // Axios automatically parses JSON
+        // console.error()
+      //  console.log(response.data); // Axios automatically parses JSON
       return response.data; // Return the data for further use
       })
       .then((data) => {
-        console.log('API Response:', data);
+        // console.log('API Response:', data);
         setProperties(data); // Set data in the state
         const offPlanData = data.filter((property) => property.mainCategory === "OffPlan")
         .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)) // Sort by creation date (newest first)
