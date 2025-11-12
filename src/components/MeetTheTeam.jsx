@@ -14,6 +14,12 @@ const MeetTheTeam = () => {
       role: "Business Development Manager",
       image: "/Ibrahim.jpeg",
     },
+    {
+      id: 3,
+      name: "Minoli Fernando",
+      role: "Office Administrator",
+      image: "/Minoli Fernando.jpeg",
+    },
     // {
     //   id: 3,
     //   name: "Ibrahim Al-Sadoon",

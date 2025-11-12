@@ -53,29 +53,24 @@ const AboutUs = () => {
         <div className="flex flex-col gap-4">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-800">About Us</h2>
           <p className="text-base text-gray-800 leading-7">
-          Expecting outstanding bespoke service and support from your real estate partner when looking for a home highlights the importance of listening to your needs.
+       <h6 className='font-bold'>
+         Le Rose Real Estate
+        
+        </h6>
 
-Excel Properties elevates the experience of its clients across all levels, from ordinary to ultra-premium, by making you our priority.
+Expecting exceptional, personalized service from your real estate partner reflects the importance of being truly heard and understood. At Le Rose Real Estate, we elevate every client’s experience—whether you’re seeking a charming apartment or an ultra-luxury residence—by placing your needs at the heart of everything we do.
 
-As the ideal starting point, with continued dedication to serving and marketing the unique properties in Dubai since its founding in 2001, we strive to set the benchmark for contemporary luxury real estate with integrated trusted knowledge and local market intelligence.
+Since our founding in 2024, we have remained dedicated to redefining contemporary real estate in Dubai through trusted expertise, deep market knowledge, and a genuine commitment to integrity. We believe that every property tells a story, and our mission is to connect you with the one that feels like home.
 
-With our clients, we keep an open and sincere interaction. Until the time of sale or purchase, we strive to our fullest to keep you informed by affirming a straightforward process throughout.
-
-Our Mission
-We attribute our success to devising effective strong relationships with clients. By understanding its true value, we’ll shine a light on your real estate investment potential. Packed with market intelligence, an unparalleled track record, and uncanny intuition, we’ll navigate through your real estate venture like our own and help you find your dream future residence or living space that brings you ultimate joy and fulfillment.
+With Le Rose, you can expect open, transparent communication at every step. From the first conversation to the final signature, we ensure a seamless, informed, and rewarding journey.
             {showMore && (
               <>
                 {' '}
-                Core Values and Culture
-At Le Rose we do it differently. We’ve mastered the nuances of the local markets aligning our business objectives by strongly following these fundamental values:
+               Our Mission
 
-We serve with an impressive know-how and experience: We lead by passion. Delivering innovative marketing techniques, we ensure reaching our goals with combined efforts and experience
+Our success is built on cultivating strong, lasting relationships with our clients. By truly understanding your goals, we unlock the full potential of your real estate investment. Guided by market insight, a proven approach, and intuitive understanding, we navigate your real estate journey as if it were our own—helping you discover a home or investment that brings lasting joy and fulfillment.
 
-We lead with unrelenting commitment and intergity: We envisage commitment beyond expectation. This way we believe trust is earned in its purest form enriching the lives of our discerning clientele.
-
-We embrace taste, grace, and finesse: We show up with class, by pushing conventional boundaries and shaping our pursuit for creative excellence.
-
-We care about relationships and building them: We aspire to become the biggest advocates to our clients through constant training, professionalism, and unique partner positioning.              </>
+At Le Rose Real Estate, we don’t just find you a property—we help you find your place in Dubai’s ever-evolving landscape.             </>
             )}
           </p>
           <button
