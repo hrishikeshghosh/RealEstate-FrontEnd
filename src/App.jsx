@@ -35,7 +35,8 @@ import TermsConditions from './components/Terms & Conditions';
 import ScrollToTop from './components/ScrollToTop';
 import RentProp from './components/RentProp';
 
-const TRACKING_ID = "G-8YDFJDE9YS"; // ✅ Replace with your GA Measurement ID
+// const TRACKING_ID = "G-8YDFJDE9YS"; // ✅ Replace with your GA Measurement ID
+const TRACKING_ID = "G-FGRG6G8TES"; // ✅ Replace with your GA Measurement ID
 
 const App = () => {
   const location = useLocation();
