@@ -4,15 +4,15 @@ const MeetTheTeam = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "Zahraa Hussein",
+      name: "Ibrahim Al-Sadoon",
       role: "CEO / Agent Representative",
-      image: "/Zaira.jpeg",
+      image: "/Ibrahim.jpeg",
     },
     {
       id: 2,
-      name: "Ibrahim Al-Sadoon",
-      role: "Business Development Manager",
-      image: "/Ibrahim.jpeg",
+      name: "Zahraa Hussein",
+      role: " Agent Representative",
+      image: "/Zaira.jpeg",
     },
     {
       id: 3,
